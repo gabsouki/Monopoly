@@ -7,7 +7,7 @@ namespace Monopoly
 {
     public class AllerPrison : Case
     {
-        public AllerPrison(int Position, string Nom) : base(Position, Nom)
+        public AllerPrison(int position, string nom) : base(position, nom)
         {
 
         }

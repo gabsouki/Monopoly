@@ -7,13 +7,13 @@ namespace Monopoly
 {
     public abstract class Case
     {
-        protected int Position;
-        protected string Nom;
+        protected int position;
+        protected string nom;
 
-        public Case(int Position, string Nom)
+        public Case(int position, string nom)
         {
-            this.Position = Position;
-            this.Nom = Nom;
+            this.position = position;
+            this.nom = nom;
         }
 
         public void Acheter()

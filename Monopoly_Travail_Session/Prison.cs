@@ -7,7 +7,7 @@ namespace Monopoly
 {
     public class Prison : Case
     {
-        public Prison(int Position, string Nom) : base(Position, Nom)
+        public Prison(int position, string nom) : base(position, nom)
         {
             throw new System.NotImplementedException();
         }

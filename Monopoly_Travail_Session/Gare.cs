@@ -7,15 +7,16 @@ namespace Monopoly
 {
     public class Gare : Case
     {
-        protected int Prix;
-        protected int Proprietaire;
-        protected int Location;
+        protected int prix;
+        protected int proprietaire;
+        protected int location;
        
 
-        public Gare(int Position, string Nom, int Prix, int Proprietaire, int Location) : base (Position, Nom)
+        public Gare(int position, string nom, int prix, int proprietaire, int location) : base (position, nom)
         {
-            this.Prix = Prix;
-            this.Location = Location;
+            this.prix = prix;
+            this.proprietaire = proprietaire;
+            this.location = location;
         }
         public void Acheter()
         {
