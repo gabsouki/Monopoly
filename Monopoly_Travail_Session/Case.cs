@@ -30,5 +30,9 @@ namespace Monopoly
         {
             throw new System.NotImplementedException();
         }
+        public void Afficher()
+        {
+            
+        }
     }
 }
