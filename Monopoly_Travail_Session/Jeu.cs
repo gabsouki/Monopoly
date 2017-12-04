@@ -8,18 +8,25 @@ namespace Monopoly
 
     public class Jeu
     {
-        private List<Joueur> joueurs;
+        public List<Joueur> joueurs;
 
         public Jeu()
         {
             joueurs = new List<Joueur>();
+            Dice des = new Dice();
 
             Console.WriteLine("MONOPOLY");
             int nbjoueurs = ChoixNbJoueurs();
 
-            for (int i = 1; i <= nbjoueurs; i++)
+            for (int i = 0; i < nbjoueurs; i++)
             {
-                
+                Console.WriteLine("Au tour de {0} de brasser les des",joueurs[i].Nom);
+                Console.WriteLine("Appuyer sur une touche pour brasser les des");
+                Console.ReadKey();
+                int resultat = des.Brasser();
+                Console.WriteLine("Vous avez brasse un {0}",resultat);
+                Console.WriteLine("Vous avez atteris sur la case {0}");
+                Console.ReadKey();
             }
         }
         public int ChoixNbJoueurs()

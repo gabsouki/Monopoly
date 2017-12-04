@@ -7,22 +7,20 @@ namespace Monopoly
 {
     public class Dice
     {
-        protected int DeUn;
-        protected int DeDeux;
+        public int Brasser()
+        {
+            Random aleatoire = new Random();
+            int DeUnValeur = aleatoire.Next(1, 7); 
+            int DeDeuxValeur = aleatoire.Next(1, 7);
 
-        public Dice(int DeUn, int DeDeux)
-        {
-            this.DeUn = DeUn;
-            this.DeDeux = DeDeux;
+            return DeUnValeur + DeDeuxValeur;
         }
-
-        public void Brasser()
+        private bool VerifDouble(int Val1, int Val2)
         {
-            throw new System.NotImplementedException();
-        }
-        public void VerifDouble()
-        {
-            
+            if (Val1 == Val2)
+                return true;
+            else
+                return false;
         }
     }
 }
