@@ -12,14 +12,39 @@ namespace Monopoly
             throw new System.NotImplementedException();
         }
 
-        public void Acheter()
+        public override void Payer(Joueur a)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Payer()
-        {
-            throw new System.NotImplementedException();
+                        if(proprietaire.Equals(a.nom))
+                Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
+            else
+            {
+                if(propritaire.Equals(null))
+                    {
+                    Acheter(a);
+                    }
+                else
+                {
+                    Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
+                    if(a.argent>location)
+                        a.argent = a.argent - location;
+                    else
+                    {
+                        do
+                            {
+                             foreach(Case el in monopoly)
+                                {
+                                  if(el.proprietaire.Equals(a.nom))
+                                  Hypothequer(a);
+                                }
+                             }while(a.argent<location);
+                        Console.WriteLine("Vous avez maintenant assez d'argent pour payer!");
+                        a.argent = a.argent - location;
+                    }
+                    
+                }
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
     }
 }

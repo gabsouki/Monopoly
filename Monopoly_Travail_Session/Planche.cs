@@ -6,16 +6,20 @@ using System.Text;
 namespace Monopoly
 {
     public class Planche
+
     {
+        //Attribut
+        monopoly[] planche;
+
+        //Constructeur
         public Planche()
         {
-            throw new System.NotImplementedException();
+            planche = new monopoly[40]; 
         }
 
         public void Initialiser()
         {
-            Case AveMedit = new Terrain(2,"Avenue Méditéranéenne",60,0,2,10,30,90,160,250,false);
-            Case AveBalti = new Terrain(4,"Avenue Baltimore",60,0,4,20,60,180,320,450,false);
+            monopoly[0];
         }
 
         public void PasserGo()
