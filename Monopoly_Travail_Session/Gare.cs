@@ -7,28 +7,62 @@ namespace Monopoly
 {
     public class Gare : Case
     {
+        //Attributs
         protected int prix;
-        protected int proprietaire;
+        protected string proprietaire;
         protected int location;
+        protected int hypotheque;
+        protected bool hypothequer;
        
-
-        public Gare(int position, string nom, int prix, int proprietaire, int location) : base (position, nom)
+        //Constructeur
+        public Gare(int position, string nom, int location) : base (position, nom)
         {
-            this.prix = prix;
-            this.proprietaire = proprietaire;
+            prix = 200;
             this.location = location;
-        }
-        public void Acheter()
-        {
-            throw new System.NotImplementedException();
+            Hypotheque = 100;
+            hypothequer = false;
         }
 
-        public void Hypothequer()
+        //Méthode
+        public void Acheter(Joueur a)
         {
-            throw new System.NotImplementedException();
+           if(a.argent >= prix)
+           {
+             Console.WriteLine("Voulez-vous acheter "+nom+" pour "+prix+"$?\n O/N");
+             if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
+              { 
+                a.argent = a.argent - prix;
+                proprietaire = a.Nom;
+                Console.WriteLine("Félicitation, vous êtes le nouveau propriétaire de "+nom+"! Il vous reste "+a.argent+"$.");
+
+              }
+            else
+                {
+               Console.WriteLine(+nom+ "est mis au Enchère!");
+                }
+             Console.ReadKey();
+             Console.Clear();
+           }
+        }
+        public void Hypothequer(Joueur a)
+        {
+           if(locataire.Equals(a.nom))
+                Console.WriteLine("Voulez-vous hypothèquer "+nom+" pour "+hypotheque+"$?\n O/N");
+             if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
+              { 
+                a.argent = a.argent + hypotheque;
+                hypothequer = true;
+                Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+a.argent+"$.");
+
+              }
+            else
+                Console.WriteLine(nom+ "n'a pas été hypothèquer.");
+            Console.ReadKey();
+            Console.Clear();
+
         }
 
-        public void Payer()
+        public virtual void Payer(Joueur a)
         {
             throw new System.NotImplementedException();
         }
