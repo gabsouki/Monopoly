@@ -7,19 +7,22 @@ namespace Monopoly
 {
     public class Joueur
     {
+        //Attributs
         protected int position;
         protected string nom;
         protected int argent;
         protected bool faillite;
 
-        public Joueur(int position, string nom,int argent, bool faillite)
+        //Constructeurs
+        public Joueur(int position, string nom, bool faillite)
         {
             this.position = position;
             this.nom = nom;
-            this.argent = argent;
+            argent = 1500;
             this.faillite = faillite;
         }
 
+        //Méthodes
         public void Jouer()
         {
             throw new System.NotImplementedException();
