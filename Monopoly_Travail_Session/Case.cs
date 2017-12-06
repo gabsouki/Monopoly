@@ -10,19 +10,17 @@ namespace Monopoly
         //Attributs
         protected int position;
         protected string nom;
+        protected bool hypothequer;
 
         //Constructeur
         public Case(int position, string nom)
         {
+            hypothequer = false;
             this.position = position;
             this.nom = nom;
         }
 
         //Méthodes
-        public abstract void Acheter();
-        public abstract void Hypothequer();
-        public abstract void Payer();
-        public abstract void Afficher();
         public abstract void Action();
     }
 }

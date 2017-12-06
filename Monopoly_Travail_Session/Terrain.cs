@@ -12,15 +12,16 @@ namespace Monopoly
         protected int prixMaison;
         protected bool hotel;
         protected int prixMaison;
-        protected bool estHypotheque;
+        protected bool Hypothequer;
 
         //Constructeur
-        public Terrain(int position, string nom, int prix, int prixMaison, int prixHotel, int location) : base(position, nom, prix, proprietaire, location)
+        public Terrain(int position, string nom, int prix, int prixMaison, int location, int hypotheque) : base(position, nom)
         {
+            this.prix = prix;
             nbrMaison = 0;
             this.prixMaison = prixMaison;
-            this.prixHotel = prixHotel;
             hotel = false;
+            this.hypotheque = hypotheque;
         }
 
         //Méthode
@@ -47,13 +48,13 @@ namespace Monopoly
             }
            else
            {
-                if(a.argent>=prixHotel)
+                if(a.argent>=prixHotel&&hotel=false)
                 {
                     Console.WriteLine("Voulez-vous ajouter un hotel sur "+nom+" pour "+prixHotel+"$?\n O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
-                         a.argent = a.argent - prixHotel;
-                         nbrMaison ++;
+                         a.argent = a.argent - prix¸Maison;
+                         hotel = true;
                          Console.WriteLine("Vous avez ajouter un hotel sur "+nom+"! Le terrain a maintenant un hotel! Il vous reste "+a.argent+"$.");
                         }
                         else

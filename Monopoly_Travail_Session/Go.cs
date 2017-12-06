@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Monopoly
+{
+
+    public class Go : Case
+    {
+	
+        public void Go()
+        {
+            nom = "Go";
+        }
+	}
+}
