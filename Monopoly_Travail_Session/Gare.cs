@@ -32,7 +32,7 @@ namespace Monopoly
              if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
               { 
                 a.argent = a.argent - prix;
-                proprietaire = a.Nom;
+                proprietaire = a.nom;
                 Console.WriteLine("Félicitation, vous êtes le nouveau propriétaire de "+nom+"! Il vous reste "+a.argent+"$.");
 
               }
@@ -69,28 +69,34 @@ namespace Monopoly
             else
             {
                 if(propritaire.Equals(null))
-                    {
-                    Acheter(a);
-                    }
+                {
+                Acheter(a);
+                }
                 else
-                    {
+                {
                     Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
                     if(a.argent>location)
                         a.argent = a.argent - location;
                     else
-                        {
+                    {
                         do
+                        {
+                            foreach(Case el in monopoly)
                             {
-                             foreach(Case el in monopoly)
-                                {
-                                  if(el.proprietaire.Equals(a.nom))
-                                  Hypothequer(a);
-                                }
-                             }while(a.argent<location);
-                        }
-                    
+                              if(el.proprietaire.Equals(a.nom))
+                                Hypothequer(a);
+                            }
+                        }while(a.argent<location);
                     }
+                
+                }
             }
+        }
+        public virtual void Action(Joueur a)
+        {
+            if(hypothequer = false)
+             Payer(a);
+
         }
 
     }
