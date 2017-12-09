@@ -33,6 +33,7 @@ namespace Monopoly
                 {
                     Transaction(joueur, null, prix);
                     Console.WriteLine("Vous etes maintenant proprietaire de {0}", nom);
+                    proprietaire = joueur;
                 }
             }
         }

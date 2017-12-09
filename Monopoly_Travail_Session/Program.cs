@@ -11,8 +11,6 @@ namespace Monopoly
         static void Main(string[] args)
         {
             Jeu partie = new Jeu();
-
-
         }
     }
 }
