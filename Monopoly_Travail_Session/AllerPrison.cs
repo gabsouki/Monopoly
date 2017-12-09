@@ -7,11 +7,15 @@ namespace Monopoly
 {
     public class AllerPrison : Case
     {
-        public AllerPrison(int position, string nom) : base(position, nom)
+        public AllerPrison(int position, string nom) : base(nom)
         {
 
         }
         public void Entrer()
+        {
+            throw new System.NotImplementedException();
+        }
+        public override void Action(Joueur joueur)
         {
             throw new System.NotImplementedException();
         }

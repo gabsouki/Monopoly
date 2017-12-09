@@ -8,24 +8,64 @@ namespace Monopoly
     public class Joueur
     {
         //Attributs
+        protected int identifiant;
         protected int position;
         protected string nom;
         protected int argent;
         protected bool faillite;
+        protected bool prison;
 
         //Constructeurs
-        public Joueur(int position, string nom, bool faillite)
+        public Joueur(int identifiant, string nom)
         {
-            this.position = position;
+            this.identifiant = identifiant;
+            position = 0;
             this.nom = nom;
             argent = 1500;
-            this.faillite = faillite;
+            faillite = false;
+            prison = false;
         }
 
         //Méthodes
-        public void Jouer()
+        public int Identifiant
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                return identifiant;
+            }
+        }
+        public bool Prison
+        {
+            get
+            {
+                return prison;
+            }
+            set
+            {
+                prison = value;
+            }
+        }
+        public int Argent
+        {
+            get
+            {
+                return argent;
+            }
+            set
+            {
+                argent = value;
+            }
+        }
+        public int Position
+        {
+            get
+            {
+                return position;
+            }
+            set
+            {
+                position = position + value;
+            }
         }
         public string Nom
         {

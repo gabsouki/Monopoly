@@ -5,27 +5,35 @@ using System.Text;
 
 namespace Monopoly
 {
-    public class Terrain : Gare
+    public class Terrain : Achetable
     {
         //Attributs
-        protected int nbrMaison;
-        protected int prixMaison;
-        protected bool hotel;
-        protected int prixMaison;
-        protected bool Hypothequer;
+        protected int immeubles;
+        protected int prixImmeuble;
 
         //Constructeur
-        public Terrain(int position, string nom, int prix, int prixMaison, int location, int hypotheque) : base(position, nom)
+        public Terrain(string nom, int prix, Joueur proprietaire, int[] loyer, int hypotheque, int prixImmeuble) : base(nom, prix, proprietaire, loyer, hypotheque)
         {
-            this.prix = prix;
-            nbrMaison = 0;
-            this.prixMaison = prixMaison;
-            hotel = false;
-            this.hypotheque = hypotheque;
+            immeubles = 0;
+            this.prixImmeuble = prixImmeuble;
+        }
+
+        public override void Action(Joueur joueur)
+        {
+            if(proprietaire != null)
+            {
+                Console.WriteLine("Cette propriete appartient a {0}.", proprietaire.Nom);
+                Console.WriteLine("Vous devez lui versez un loyer de {0}.", loyer[immeubles]);
+                Transaction(joueur, proprietaire, loyer[immeubles]);
+            }
+            else
+            {
+                Acheter(joueur);
+            }
         }
 
         //Méthode
-        public void ajouterMaison(Joueur a)
+        /*public void ajouterMaison(Joueur a)
         {
             if(nbrMaison<4 && hotel = false)
             {
@@ -65,7 +73,7 @@ namespace Monopoly
                      Console.Clear();
                 }
            }                   
-        }
+        }*/
     }
 
 

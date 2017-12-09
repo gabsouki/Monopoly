@@ -15,16 +15,20 @@ namespace Monopoly
         protected bool hypothequer;
        
         //Constructeur
-        public Gare(int position, string nom, int location) : base (position, nom)
+        public Gare(int position, string nom, int location) : base (nom)
         {
             prix = 200;
             this.location = location;
-            Hypotheque = 100;
+            hypotheque = 100;
             hypothequer = false;
+        }
+        public override void Action(Joueur joueur)
+        {
+            throw new System.NotImplementedException();
         }
 
         //Méthode
-        public void Acheter(Joueur a)
+       /* public void Acheter(Joueur a)
         {
            if(a.argent >= prix)
            {
@@ -91,13 +95,6 @@ namespace Monopoly
                 
                 }
             }
-        }
-        public virtual void Action(Joueur a)
-        {
-            if(hypothequer = false)
-             Payer(a);
-
-        }
-
+        }*/
     }
 }

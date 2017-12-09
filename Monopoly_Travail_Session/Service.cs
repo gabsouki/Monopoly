@@ -5,14 +5,18 @@ using System.Text;
 
 namespace Monopoly
 {
-    public class Service : Gare
+    public class Service : Case
     {
-        public Service(int position,string nom, int prix, int proprietaire, int location) : base(position, nom, prix, proprietaire, location)
+        public Service(int position,string nom, int prix, int proprietaire, int location) : base(nom)
         {
             throw new System.NotImplementedException();
         }
+        public override void Action(Joueur joueur)
+        {
+            throw new NotImplementedException();
+        }
 
-        public override void Payer(Joueur a)
+        /*public override void Payer(Joueur a)
         {
                         if(proprietaire.Equals(a.nom))
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
@@ -45,6 +49,6 @@ namespace Monopoly
                 Console.ReadKey();
                 Console.Clear();
             }
-        }
+        }*/
     }
 }
