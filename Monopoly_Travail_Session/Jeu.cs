@@ -17,6 +17,7 @@ namespace Monopoly
             int nombreJoueurs = joueur.Ajouter();
             cases.Initialiser();
             int doubles = 0;
+            bool game = true;
             do
             {
                 for (int i = 0; i <= nombreJoueurs; i++)
@@ -69,7 +70,9 @@ namespace Monopoly
                         cases.Interaction(joueurActuel);
                     }
                 }
-            } while (true);
+                if (joueur.Faillites == nombreJoueurs-1)
+                    game = false;
+            } while (game == true);
         }
     }
 }

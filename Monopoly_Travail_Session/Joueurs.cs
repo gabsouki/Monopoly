@@ -39,5 +39,12 @@ namespace Monopoly
             joueur.Faillite = true;
             faillites++;
         }
+        public int Faillites
+        {
+            get
+            {
+                return faillites;
+            }
+        }
     }
 }
