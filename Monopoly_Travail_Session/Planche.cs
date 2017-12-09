@@ -8,35 +8,22 @@ namespace Monopoly
     public class Planche
 
     {
-<<<<<<< HEAD
-
-
-=======
         //Attribut
         monopoly[] planche;
 
         //Constructeur
->>>>>>> bc195a0... Début de service et tableau Planche
         public Planche()
         {
-            planche = new monopoly[40]; 
+            planche = new monopoly[40];
         }
 
         public void Initialiser()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            Case aveMedit = new Terrain(2,"Avenue Méditéranéenne",60,0,2,10,30,90,160,250,false);
-            Case aveBalti = new Terrain(4,"Avenue Baltimore",60,0,4,20,60,180,320,450,false);
-=======
-            monopoly[0];
->>>>>>> bc195a0... Début de service et tableau Planche
-=======
             monopoly[0] = new Go();
             monopoly[1] = new Terrain(2, "Avenue de la Méditerranée", 60, 50, 2, 30);
             monopoly[2] = new Carte(3);
             monopoly[3] = new Terrain(4, "Avenue de la Baltique", 60, 50, 4, 30);
-            monopoly[4] = new Evenement(5, "Impôt sur le revenu",200);
+            monopoly[4] = new Evenement(5, "Impôt sur le revenu", 200);
             monopoly[5] = new Gare(6, "Chemin de fer Reading");
             monopoly[6] = new Terrain(7, "Avenue de l’Orient", 100, 50, 6, 50);
             monopoly[7] = new Carte(8);
@@ -73,7 +60,6 @@ namespace Monopoly
             monopoly[38] = new Evenement(39, "Taxes de luxe", 75);
             monopoly[39] = new Terrain(40, "Promenade", 400, 200, 50, 200);
 
->>>>>>> d35ecd2... Case & plateau
         }
 
         public void PasserGo()
