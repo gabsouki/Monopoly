@@ -8,10 +8,12 @@ namespace Monopoly
     public class Joueurs
     {
         List<Joueur> joueurs;
+        protected int faillites;
 
         public Joueurs()
         {
             joueurs = new List<Joueur>();
+            faillites = 0;
         }
         public int Ajouter()
         {
@@ -31,6 +33,11 @@ namespace Monopoly
         public Joueur Liste(int identifiant)
         {
             return joueurs[identifiant];
+        }
+        public void Faillite(Joueur joueur)
+        {
+            joueur.Faillite = true;
+            faillites++;
         }
     }
 }

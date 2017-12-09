@@ -27,6 +27,17 @@ namespace Monopoly
         }
 
         //Méthodes
+        public bool Faillite
+        {
+            get
+            {
+                return faillite;
+            }
+            set
+            {
+                faillite = value;
+            }
+        }
         public int Identifiant
         {
             get
@@ -64,7 +75,7 @@ namespace Monopoly
             }
             set
             {
-                position = position + value;
+                    position = position + value;
             }
         }
         public string Nom

@@ -22,9 +22,13 @@ namespace Monopoly
                 for (int i = 0; i <= nombreJoueurs; i++)
                 {
                     Joueur joueurActuel = joueur.Liste(i);
-                    if (joueurActuel.Prison == true)
+                    if(joueurActuel.Faillite == true)
                     {
-                        Console.WriteLine("{0}, vous etes en prison, vous passez votre tour.");
+                        Console.WriteLine("{0} est en faillite. Le tour est au joueur suivant.", joueurActuel.Nom);
+                    }
+                    else if (joueurActuel.Prison == true)
+                    {
+                        Console.WriteLine("{0}, vous etes en prison, vous passez votre tour.", joueurActuel.Nom);
                         joueurActuel.Prison = false;
                     }
                     else
