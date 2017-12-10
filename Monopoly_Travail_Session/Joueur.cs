@@ -8,10 +8,7 @@ namespace Monopoly
     public class Joueur
     {
         //Attributs
-<<<<<<< HEAD
-=======
         protected int identifiant;
->>>>>>> gabriel
         protected int position;
         protected string nom;
         protected int argent;
@@ -19,30 +16,23 @@ namespace Monopoly
         protected bool prison;
 
         //Constructeurs
-<<<<<<< HEAD
-        public Joueur(int position, string nom, bool faillite)
-=======
         public Joueur(int identifiant, string nom)
->>>>>>> gabriel
         {
             this.identifiant = identifiant;
             position = 0;
             this.nom = nom;
             argent = 1500;
-<<<<<<< HEAD
             this.faillite = faillite;
         }
 
         //Méthodes
-        public void Jouer()
-=======
+        /*public void Jouer()
             faillite = false;
             prison = false;
-        }
+        }*/
 
         //Méthodes
         public bool Faillite
->>>>>>> gabriel
         {
             get
             {
