@@ -7,7 +7,7 @@ namespace Monopoly
 {
     public class Carte : Case
     {
-        public Carte(int position, string nom) : base(position, nom)
+        public Carte(int position, string nom) : base(nom)
         {
             throw new System.NotImplementedException();
         }
@@ -15,6 +15,10 @@ namespace Monopoly
         public void Piger()
         {
             throw new System.NotImplementedException();
+        }
+        public override void Action(Joueur joueur)
+        {
+            throw new NotImplementedException();
         }
     }
 }

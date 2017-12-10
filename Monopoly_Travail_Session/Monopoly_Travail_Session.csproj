@@ -45,6 +45,8 @@
     <Compile Include="Carte.cs" />
     <Compile Include="Case.cs" />
     <Compile Include="AllerPrison.cs" />
+    <Compile Include="Achetable.cs" />
+    <Compile Include="Joueurs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DiagrammeClasses.cd" />

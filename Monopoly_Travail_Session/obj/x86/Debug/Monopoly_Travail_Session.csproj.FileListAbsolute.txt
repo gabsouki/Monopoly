@@ -1,0 +1,5 @@
+/Users/gabsou/Projects/Monopoly_Travail_Session/Monopoly_Travail_Session/bin/Debug/Monopoly_Travail_Session.exe
+/Users/gabsou/Projects/Monopoly_Travail_Session/Monopoly_Travail_Session/bin/Debug/Monopoly_Travail_Session.pdb
+/Users/gabsou/Projects/Monopoly_Travail_Session/Monopoly_Travail_Session/obj/x86/Debug/Monopoly_Travail_Session.csproj.CoreCompileInputs.cache
+/Users/gabsou/Projects/Monopoly_Travail_Session/Monopoly_Travail_Session/obj/x86/Debug/Monopoly_Travail_Session.exe
+/Users/gabsou/Projects/Monopoly_Travail_Session/Monopoly_Travail_Session/obj/x86/Debug/Monopoly_Travail_Session.pdb
