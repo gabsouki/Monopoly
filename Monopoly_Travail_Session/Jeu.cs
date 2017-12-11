@@ -37,8 +37,11 @@ namespace Monopoly
                         Console.WriteLine("Au tour de {0} de brasser les des.\n", joueurActuel.Nom);
                         Console.WriteLine("Appuyer sur une touche pour brasser les des.");
                         Console.ReadKey();
-                        Console.WriteLine("Vous avez obtenu {0} et {1}", des.Brasser()[0], des.Brasser()[1]);
-                        if (des.Brasser()[0] == des.Brasser()[1])
+                        int deUn = Dice.Brasser();
+                        int deDeux = Dice.Brasser();
+
+                        Console.WriteLine("Vous avez obtenu {0} et {1}", deUn, deDeux);
+                        if (deUn == deDeux)
                         {
                             if (doubles == 3)
                             {
@@ -58,14 +61,14 @@ namespace Monopoly
                             doubles = 0;
                         }
                         Console.ReadKey();
-                        if(joueurActuel.Position+des.Brasser()[0]+des.Brasser()[1]>=39)
+                        if(joueurActuel.Position+deUn+deDeux>=39)
                         {
                             int compteFin = 39 - joueurActuel.Position;
-                            joueurActuel.Position = (des.Brasser()[0] + des.Brasser()[1]) - compteFin;
+                            joueurActuel.Position = (deUn + deDeux) - compteFin;
                         }
                         else
                         {
-                            joueurActuel.Position = des.Brasser()[0] + des.Brasser()[1];
+                            joueurActuel.Position = deUn + deDeux;
                         }
                         cases.Interaction(joueurActuel);
                     }

@@ -7,36 +7,12 @@ namespace Monopoly
 {
     public class Dice
     {
-        //protected int deUn;
-        //protected int deDeux;
-        
-        public Dice(int deUn, int deDeux)
-        {
-            //this.deUn = deUn;
-            //this.deDeux = deDeux;
-        }
 
         public static int Brasser()
         {
-            Random lance1 = new Random();
-            int deUn = lance1.Next(1, 7);
-            Random lance2 = new Random();
-            int deDeux = lance2.Next(1, 7);
-            int totalDe = deUn + deDeux;
-            return totalDe;
+            Random lance = new Random();
+            int de = lance.Next(1, 7);
+            return de;
         }
-        /*
-        public static bool VerifDouble()
-        {
-            bool doubleDe = false;
-            if (deUn == deDeux)
-            {
-                doubleDe = true;
-                Console.WriteLine(doubleDe);
-            }
-            return doubleDe;
-        }
-        */
-    }
-    }
+     }
 }
