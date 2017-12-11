@@ -11,10 +11,7 @@ namespace Monopoly
         {
             throw new System.NotImplementedException();
         }
-<<<<<<< HEAD
 
-        public override void Payer(Joueur a)
-=======
         public override void Action(Joueur joueur)
         {
             throw new NotImplementedException();
@@ -58,6 +55,6 @@ namespace Monopoly
         }
 =======
         }*/
->>>>>>> gabriel
+
     }
 }

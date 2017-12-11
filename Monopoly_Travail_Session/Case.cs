@@ -8,30 +8,16 @@ namespace Monopoly
     public abstract class Case
     {
         //Attributs
-<<<<<<< HEAD
-        protected int position;
-=======
->>>>>>> gabriel
         protected string nom;
         protected bool hypothequer;
 
         //Constructeur
-<<<<<<< HEAD
-        public Case(int position, string nom)
-        {
-            hypothequer = false;
-            this.position = position;
-=======
         public Case(string nom)
         {
->>>>>>> gabriel
             this.nom = nom;
         }
 
         //Méthodes
-<<<<<<< HEAD
-        public abstract void Action();
-=======
         public abstract void Action(Joueur joueur);
 
         public void Afficher()
@@ -64,6 +50,5 @@ namespace Monopoly
         {
             
         }
->>>>>>> gabriel
     }
 }
