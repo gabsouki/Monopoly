@@ -7,15 +7,12 @@ namespace Monopoly
 {
     public class Planche
     {
-        List<Case> monopoly;
-
-        //Attribut
-        //monopoly[] planche;
+        monopoly[] planche;
 
         //Constructeur
         public Planche()
         {
-            monopoly = new List<Case>();
+            monopoly = new planche[40];
         }
 
 
@@ -27,7 +24,7 @@ namespace Monopoly
             monopoly.Add(new Terrain("Avenue de la Méditerranée", 60, null, new int[] { 2, 10, 30, 90, 160, 250 }, 30, 50));
             //monopoly[2] = new Carte(3);
             monopoly.Add(new Terrain("Avenue de la Baltique",60,null,new int[] {4, 20, 60, 180, 320, 450},30,50));
-            /*monopoly[4] = new Evenement(5, "Impôt sur le revenu", 200);
+            //monopoly[4] = new Evenement(5, "Impôt sur le revenu", 200);
             monopoly[5] = new Gare(6, "Chemin de fer Reading");
             monopoly[6] = new Terrain(7, "Avenue de l’Orient", 100, 50, 6, 50);
             monopoly[7] = new Carte(8);
