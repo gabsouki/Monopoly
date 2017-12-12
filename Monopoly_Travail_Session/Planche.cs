@@ -7,24 +7,44 @@ namespace Monopoly
 {
     public class Planche
     {
-        monopoly[] planche;
+        //monopoly[] planche;
+        Case[] monopoly;
 
         //Constructeur
         public Planche()
         {
-            monopoly = new planche[40];
+            Case[] monopoly = new Case[40];
         }
-
 
         public void Initialiser()
         {
-            //monopoly[0] = new Go();
-            monopoly.Add(new Terrain("Avenue de la Méditerranée", 60, null, new int[] { 2, 10, 30, 90, 160, 250 }, 30, 50));
-            monopoly.Add(new Terrain("Avenue de la Méditerranée", 60, null, new int[] { 2, 10, 30, 90, 160, 250 }, 30, 50));
-            monopoly.Add(new Terrain("Avenue de la Méditerranée", 60, null, new int[] { 2, 10, 30, 90, 160, 250 }, 30, 50));
-            //monopoly[2] = new Carte(3);
-            monopoly.Add(new Terrain("Avenue de la Baltique",60,null,new int[] {4, 20, 60, 180, 320, 450},30,50));
-            //monopoly[4] = new Evenement(5, "Impôt sur le revenu", 200);
+            Case[] monopoly = new Case[40];
+            monopoly[1] = new Terrain("Mediterranean Avenue", 60, null, new int[] { 2, 10, 30, 90, 160, 250 }, 30, 50);
+            monopoly[3] = new Terrain("Baltic Avenue", 60, null, new int[] { 4, 20, 60, 180, 320, 450 }, 30, 50);
+            monopoly[6] = new Terrain("Oriental Avenue", 100, null, new int[] { 6, 30, 90, 270, 400, 550 }, 50, 50);
+            monopoly[8] = new Terrain("Vermont Avenue", 100, null, new int[] { 6, 30, 90, 270, 400, 550 }, 50, 50);
+            monopoly[9] = new Terrain("Connecticut Avenue", 120, null, new int[] { 8, 40, 100, 300, 450, 600 }, 60, 50);
+            monopoly[11] = new Terrain("St. Charles Place", 140, null, new int[] { 10, 50, 150, 450, 625, 750 }, 70, 100);
+            monopoly[13] = new Terrain("States Avenue", 140, null, new int[] { 10, 50, 150, 450, 625, 750 }, 70, 100);
+            monopoly[14] = new Terrain("Virginia Avenue", 160, null, new int[] { 12, 60, 180, 500, 700, 900 }, 80, 100);
+            monopoly[16] = new Terrain("St. James Place", 180, null, new int[] { 14, 70, 200, 550, 750, 950 }, 90, 100);
+            monopoly[18] = new Terrain("Tennessee Avenue", 180, null, new int[] { 14, 70, 200, 550, 750, 950 }, 90, 100);
+            monopoly[19] = new Terrain("New York Avenue", 200, null, new int[] { 16, 80, 220, 600, 800, 1000 }, 100, 100);
+            monopoly[21] = new Terrain("Kentucky Avenue", 220, null, new int[] { 18, 90, 250, 700, 875, 1050 }, 110, 150);
+            monopoly[23] = new Terrain("Indiana Avenue", 220, null, new int[] { 18, 90, 250, 700, 875, 1050 }, 110, 150);
+            monopoly[24] = new Terrain("Illinois Avenue", 240, null, new int[] { 20, 100, 300, 750, 925, 1100 }, 120, 150);
+            monopoly[26] = new Terrain("Atlantic Avenue", 260, null, new int[] { 22, 110, 330, 800, 975, 1150 }, 130, 150);
+            monopoly[27] = new Terrain("Ventnor Avenue", 260, null, new int[] { 22, 110, 330, 800, 975, 1150 }, 130, 150);
+            monopoly[29] = new Terrain("Marvin Gardens", 280, null, new int[] { 24, 120, 360, 850, 1025, 1200 }, 140, 150);
+            monopoly[31] = new Terrain("Pacific Avenue", 300, null, new int[] { 26, 130, 390, 900, 1100, 1275 }, 150, 200);
+            monopoly[32] = new Terrain("North Carolina Avenue", 300, null, new int[] { 26, 130, 390, 900, 1100, 1275 }, 150, 200);
+            monopoly[34] = new Terrain("Pennsylvania Avenue", 320, null, new int[] { 28, 150, 450, 1000, 1200, 1400 }, 160, 200);
+            monopoly[37] = new Terrain("Park Place", 350, null, new int[] { 35, 175, 500, 1100, 1300, 1500 }, 175, 200);
+            monopoly[39] = new Terrain("Boardwalk", 400, null, new int[] { 50, 200, 600, 1400, 1700, 2000 }, 200, 200);
+
+            /*
+            monopoly.Add(new Terrain("Avenue de la Méditerranée", 60, null, new int[] { 2, 10, 30, 90, 160, 250 }, 30, 50)); 
+            monopoly[4] = new Evenement(5, "Impôt sur le revenu", 200);
             monopoly[5] = new Gare(6, "Chemin de fer Reading");
             monopoly[6] = new Terrain(7, "Avenue de l’Orient", 100, 50, 6, 50);
             monopoly[7] = new Carte(8);
@@ -60,7 +80,7 @@ namespace Monopoly
             monopoly[37] = new Terrain(38, "Place du Parc", 350, 200, 35, 175);
             monopoly[38] = new Evenement(39, "Taxes de luxe", 75);
             monopoly[39] = new Terrain(40, "Promenade", 400, 200, 50, 200);
-*/
+            */
         }
 
         public void PasserGo()
