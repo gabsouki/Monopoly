@@ -10,45 +10,33 @@ namespace Monopoly
         //Attributs
         protected string nom;
         protected bool hypothequer;
+        protected int position;
 
         //Constructeur
-        public Case(string nom)
+        public Case(string nom, int position)
         {
             this.nom = nom;
+            this.position = position;
         }
 
         //Méthodes
         public abstract void Action(Joueur joueur);
-
         public void Afficher()
         {
-            Console.WriteLine("Vous avez atteri sur la case {0}", nom);
+            Console.WriteLine("Vous avez atteri sur la case {0}!", nom);
         }
-        public void Transaction(Joueur debiteur, Joueur crediteur, int valeurTransaction)
+        public void Transaction(Joueur payeur, int montant, Joueur receveur)
         {
-            if (debiteur == null)
-            {
-                crediteur.Argent = crediteur.Argent + valeurTransaction;
-                Console.WriteLine("Vous avez maintenant {0}$", crediteur.Argent);
-            }
-            else
-            {
-                if (debiteur.Argent >= valeurTransaction)
-                {
-                    debiteur.Argent = debiteur.Argent - valeurTransaction;
-                    if (crediteur != null)
-                        crediteur.Argent = crediteur.Argent + valeurTransaction;
-                    Console.WriteLine("Vous avez maintenant {0}$",debiteur.Argent);
-                }
-                else
-                {
-                    Console.WriteLine("Vous n'avez pas assez d'argent pour effectuer cette transaction.");
-                }
-            }
+            Transaction(payeur, montant);
+            Transaction(montant, receveur);
         }
-        public void ActionSuivante(Joueur joueur)
+         public void Transaction(Joueur payeur, int montant)
         {
-            
+            payeur.Argent = payeur.Argent - montant;
+        }
+        public void Transaction(int montant, Joueur receveur)
+        {
+            receveur.Argent = receveur.Argent + motnant;
         }
     }
 }

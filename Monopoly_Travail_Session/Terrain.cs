@@ -5,45 +5,36 @@ using System.Text;
 
 namespace Monopoly
 {
-    public class Terrain : Achetable
+    public class Terrain : Gare
     {
         //Attributs
-        protected int immeubles;
-        protected int prixImmeuble;
+        protected int maison;
+        protected int prixMaison;
 
         //Constructeur
-        public Terrain(string nom, int prix, Joueur proprietaire, int[] loyer, int hypotheque, int prixImmeuble) : base(nom, prix, proprietaire, loyer, hypotheque)
+        public Terrain(string nom, int prix, Joueur proprietaire, int[] loyer, int hypotheque, int prixMaison) : base(nom, prix, proprietaire, loyer, hypotheque)
         {
-            immeubles = 0;
-            this.prixImmeuble = prixImmeuble;
+            maison = 0;
+            this.prixMaison = prixMaison;
         }
-        public override void Action(Joueur joueur)
+        public override void Action(Joueur a)
         {
-            if (proprietaire != null)
-            {
-                Console.WriteLine("Cette propriete appartient a {0}.", proprietaire.Nom);
-                Console.WriteLine("Vous devez lui versez un loyer de {0}.", loyer[immeubles]);
-                Transaction(joueur, proprietaire, loyer[immeubles]);
-            }
-            else
-            {
-                Acheter(joueur);
-            }
+        payer(a);
         }
 
         //Méthode
-        /*public void ajouterMaison(Joueur a)
+        public void addMaison(Joueur a)
         {
             if(nbrMaison<4 && hotel = false)
             {
-                  if(a.argent >= prixMaison)
+                  if(a.Argent >= prixMaison)
                   {
                         Console.WriteLine("Voulez-vous ajouter une maison sur "+nom+" pour "+prixMaison+"$?\n O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
-                         a.argent = a.argent - prixMaison;
+                        Transaction(a,prixMaison);
                          nbrMaison ++;
-                         Console.WriteLine("Vous avez ajouter une maison sur "+nom+"! Le terrain a maintenant "+nbrMaison+" maison(s). Il vous reste "+a.argent+"$.");
+                         Console.WriteLine("Vous avez ajouter une maison sur "+nom+"! Le terrain a maintenant "+nbrMaison+" maison(s). Il vous reste "+a.Argent+"$.");
                         }
                         else
                         {
@@ -55,14 +46,14 @@ namespace Monopoly
             }
            else
            {
-                if(a.argent>=prixHotel&&hotel=false)
+                if(a.Argent>=prixMaison&&hotel=false)
                 {
-                    Console.WriteLine("Voulez-vous ajouter un hotel sur "+nom+" pour "+prixHotel+"$?\n O/N");
+                    Console.WriteLine("Voulez-vous ajouter un hotel sur "+nom+" pour "+prixMaison+"$?\n O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
-                         a.argent = a.argent - prix¸Maison;
+                        Transaction(a, prixMaison);
                          hotel = true;
-                         Console.WriteLine("Vous avez ajouter un hotel sur "+nom+"! Le terrain a maintenant un hotel! Il vous reste "+a.argent+"$.");
+                         Console.WriteLine("Vous avez ajouter un hotel sur "+nom+"! Le terrain a maintenant un hotel! Il vous reste "+a.Argent+"$.");
                         }
                         else
                         {
@@ -72,7 +63,7 @@ namespace Monopoly
                      Console.Clear();
                 }
            }                   
-        }*/
+        }
     }
 
 }

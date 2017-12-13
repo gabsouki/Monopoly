@@ -10,23 +10,25 @@ namespace Monopoly
         //Attributs
         protected int prix;
         protected string proprietaire;
-        protected int location;
         protected int hypotheque;
         protected bool hypothequer;
+        protected int[] loyer;
        
         //Constructeur
-        public Gare(string nom, int location) : base (nom)
+        public Gare(string nom, int position) : base (nom, position)
         {
             prix = 200;
-            this.location = location;
             hypotheque = 100;
             hypothequer = false;
+            this.loyer = new int[] {25, 50, 100, 200};
         }
         //Méthode
         public override void Action(Joueur a)
         {
         if(hypothequer = false)
              Payer(a);
+        else
+             Console.WriteLine(nom + " est hypothéqué.");
         }
 
         //Méthode
@@ -37,7 +39,7 @@ namespace Monopoly
              Console.WriteLine("Voulez-vous acheter "+nom+" pour "+prix+"$?\n O/N");
              if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
               { 
-                a.Argent = a.Argent - prix;
+                Transaction(a, prix);
                 proprietaire = a.Identifiant;
                 Console.WriteLine("Félicitation, vous êtes le nouveau propriétaire de "+nom+"! Il vous reste "+a.Argent+"$.");
 
@@ -56,7 +58,7 @@ namespace Monopoly
                 Console.WriteLine("Voulez-vous hypothèquer "+nom+" pour "+hypotheque+"$?\n O/N");
              if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
               { 
-                a.Argent = a.Argent + hypotheque;
+                Transaction(hypotheque, a);
                 hypothequer = true;
                 Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+a.Argent+"$.");
 
@@ -92,10 +94,15 @@ namespace Monopoly
                             }
                         }while(a.Argent<location);
                     }
-                    a.Argent = a.Argent - location;
-
+                    foreach (Joueurs joueur in joueurs)
+                    if(propriétaire.Equals(joueur.Identifiant))
+                            {
+                              Transaction(a, location, joueur);
+                              Console.WriteLine("Vous avez payé "+joueur.Identifiant+"! Vous avez maintenant "+a.Argent+"$ et il a "+joueur.Argent+"$.");
+                            }
                 }
                 
+
                 
             }
         }
