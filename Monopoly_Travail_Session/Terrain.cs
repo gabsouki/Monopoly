@@ -8,13 +8,13 @@ namespace Monopoly
     public class Terrain : Gare
     {
         //Attributs
-        protected int maison;
+        protected int nbrMaison;
         protected int prixMaison;
 
         //Constructeur
         public Terrain(string nom, int prix, Joueur proprietaire, int[] loyer, int hypotheque, int prixMaison) : base(nom, prix, proprietaire, loyer, hypotheque)
         {
-            maison = 0;
+            nbrMaison = 0;
             this.prixMaison = prixMaison;
         }
         public override void Action(Joueur a)
@@ -23,6 +23,42 @@ namespace Monopoly
         }
 
         //Méthode
+        public override void Payer(Joueur a)
+        {
+            if(proprietaire.Equals(a.Identifiant))
+                Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
+            else
+            {
+                if(propritaire.Equals(null))
+                {
+                Acheter(a);
+                }
+                else
+                {
+                    Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
+                    if(a.Argent<location)
+                    {
+                        do
+                        {
+                            foreach(Case el in monopoly)
+                            {
+                              if(el.proprietaire.Equals(a.Identifiant))
+                                Hypothequer(a);
+                            }
+                        }while(a.Argent<loyer[nbrMaison]);
+                    }
+                    foreach (Joueurs joueur in joueurs)
+                    if(propriétaire.Equals(joueur.Identifiant))
+                            {
+                              Transaction(a, loyer[nbrMaison], joueur);
+                              Console.WriteLine("Vous avez payé "+joueur.Identifiant+"! Vous avez maintenant "+a.Argent+"$ et il a "+joueur.Argent+"$.");
+                            }
+                }
+                
+
+                
+            }
+        }
         public void addMaison(Joueur a)
         {
             if(nbrMaison<4 && hotel = false)
@@ -38,7 +74,7 @@ namespace Monopoly
                         }
                         else
                         {
-                          Console.WriteLine("Aucune maison ne sera rajoutée");
+                          Console.WriteLine("Aucune maison ne sera ajoutée");
                         }
                      Console.ReadKey();
                      Console.Clear();
@@ -57,7 +93,7 @@ namespace Monopoly
                         }
                         else
                         {
-                          Console.WriteLine("Aucun hotel ne sera rajoutée");
+                          Console.WriteLine("Aucun hotel ne sera ajouté");
                         }
                      Console.ReadKey();
                      Console.Clear();

@@ -14,6 +14,7 @@ namespace Monopoly
         protected int argent;
         protected bool faillite;
         protected bool prison;
+        int nbrGare;
 
         //Constructeurs
         public Joueur(int identifiant, string nom)
@@ -23,6 +24,7 @@ namespace Monopoly
             this.nom = nom;
             argent = 1500;
             this.faillite = faillite;
+            nbrGare = 0;
         }
 
         //Méthodes
@@ -49,6 +51,17 @@ namespace Monopoly
             {
                 return identifiant;
             }
+        }
+        public int NbrGare
+        {
+            get
+            {
+                return nbrGare;
+            }
+            set
+            {
+                nbrGare = value;
+}           }
         }
         public bool Prison
         {

@@ -20,7 +20,7 @@ namespace Monopoly
             prix = 200;
             hypotheque = 100;
             hypothequer = false;
-            this.loyer = new int[] {25, 50, 100, 200};
+            this.loyer = new int[] {0, 25, 50, 100, 200};
         }
         //Méthode
         public override void Action(Joueur a)
@@ -79,11 +79,12 @@ namespace Monopoly
                 if(propritaire.Equals(null))
                 {
                 Acheter(a);
+                 a.NbrGare =a.NbrGare + 1;
                 }
                 else
                 {
                     Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
-                    if(a.Argent<location)
+                    if(a.Argent<loyer[a.NbrGare])
                     {
                         do
                         {
@@ -92,12 +93,12 @@ namespace Monopoly
                               if(el.proprietaire.Equals(a.Identifiant))
                                 Hypothequer(a);
                             }
-                        }while(a.Argent<location);
+                        }while(a.Argent<loyer[a.NbrGare]);
                     }
                     foreach (Joueurs joueur in joueurs)
                     if(propriétaire.Equals(joueur.Identifiant))
                             {
-                              Transaction(a, location, joueur);
+                              Transaction(a, loyer[a.NbrGare], joueur);
                               Console.WriteLine("Vous avez payé "+joueur.Identifiant+"! Vous avez maintenant "+a.Argent+"$ et il a "+joueur.Argent+"$.");
                             }
                 }
