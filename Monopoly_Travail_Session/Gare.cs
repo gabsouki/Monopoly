@@ -14,12 +14,12 @@ namespace Monopoly
         protected int[] loyer;
        
         //Constructeur
-        public Gare(string nom, int prix, int[] loyer) : base (nom)
+        public Gare(string nom) : base (nom)
         {
             prix = 200;
             estHypotheque = false;
             proprietaire = null;
-            this.loyer = new int[] {0, 25, 50, 100, 200};
+            loyer = new int[] {0, 25, 50, 100, 200};
         }
         //Méthode
         public override void Action(Joueur a)

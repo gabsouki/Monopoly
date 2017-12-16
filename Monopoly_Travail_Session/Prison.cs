@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +10,7 @@ namespace Monopoly
         
         public Prison(string nom) : base(nom)
         {
+<<<<<<< Updated upstream
             
         }
 
@@ -20,6 +21,10 @@ namespace Monopoly
             joueur.Position = 30;
         }
 
+=======
+            //throw new System.NotImplementedException();
+        }
+>>>>>>> Stashed changes
         public override void Action(Joueur joueur)
         {
              Console.WriteLine("Voulez-vous payer pour sortir de prison?");

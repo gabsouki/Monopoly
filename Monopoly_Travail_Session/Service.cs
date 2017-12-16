@@ -5,56 +5,57 @@ using System.Text;
 
 namespace Monopoly
 {
-    public class Service : Case
+    public class Service : Gare
     {
-        public Service(int position,string nom, int prix, int proprietaire, int location) : base(nom)
+        Dice des = new Dice();
+
+        public Service(string nom) : base(nom)
         {
-            throw new System.NotImplementedException();
+            prix = 150;
+            proprietaire = null;
         }
 
         public override void Action(Joueur joueur)
         {
-            throw new NotImplementedException();
+            Payer(joueur);
         }
 
-        /*public override void Payer(Joueur a)
->>>>>>> gabriel
+        public override void Payer(Joueur joueur)
         {
-                        if(proprietaire.Equals(a.nom))
+            if(proprietaire == joueur)
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
-                if(propritaire.Equals(null))
+                if(proprietaire == null)
                     {
-                    Acheter(a);
+                        Acheter(joueur);
                     }
                 else
                 {
-                    Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
-                    if(a.argent>location)
-                        a.argent = a.argent - location;
+                    Console.WriteLine("Brassez les dés pour connaître le loyer à payer");
+                    int deUn = des.Brasser();
+                    int deDeux = des.Brasser();
+                    Console.WriteLine("Vous avez obtenu {0} et {1}", deUn, deDeux);
+                    int loyerService = (deUn + deDeux) * 10;
+                    Console.WriteLine("Vous devez payer "+loyerService+" à "+proprietaire+"!");
+                    if(joueur.Argent>loyerService)
+                        joueur.Argent = joueur.Argent - loyerService;
                     else
                     {
                         do
                             {
-                             foreach(Case el in monopoly)
+                            foreach (Case el in Planche.monopoly)
                                 {
-                                  if(el.proprietaire.Equals(a.nom))
-                                  Hypothequer(a);
+                                  if(proprietaire == joueur)
+                                  Hypothequer(joueur);
                                 }
-                             }while(a.argent<location);
+                        }while(joueur.Argent<loyerService);
                         Console.WriteLine("Vous avez maintenant assez d'argent pour payer!");
-                        a.argent = a.argent - location;
+                        joueur.Argent = joueur.Argent - loyerService;
                     }
-                    
                 }
                 Console.ReadKey();
-                Console.Clear();
             }
-<<<<<<< HEAD
         }
-=======
-        }*/
-
     }
 }

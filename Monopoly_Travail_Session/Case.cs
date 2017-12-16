@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Monopoly
 {
-    public abstract class Case
+    public class Case
     {
         //Attributs
         protected string nom;
@@ -19,7 +19,11 @@ namespace Monopoly
         }
 
         //Méthodes
-        public abstract void Action(Joueur joueur);
+        public virtual void Action(Joueur joueur)
+        {
+            
+        }
+
         public void Afficher()
         {
             Console.WriteLine("Vous avez atteri sur la case {0}!", nom);

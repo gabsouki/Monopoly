@@ -7,7 +7,6 @@ namespace Monopoly
 {
     public class Dice
     {
-
         public static int Brasser()
         {
             System.Threading.Thread.Sleep(250);

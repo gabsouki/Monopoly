@@ -12,12 +12,14 @@ namespace Monopoly
         protected int prixMaison;
 
         //Constructeur
-        public Terrain(string nom, int prix, int[] loyer, int prixMaison) : base(nom, prix, loyer)
+        public Terrain(string nom, int prix, int[] loyer, int prixMaison) : base(nom)
         {
             nbrMaison = 0;
             proprietaire = null;
             this.prix = prix;
             this.prixMaison = prixMaison;
+            this.loyer = loyer;
+            this.prix = prix;
         }
         public override void Action(Joueur a)
         {
@@ -75,7 +77,7 @@ namespace Monopoly
                           Console.WriteLine("Aucune maison ne sera ajoutée");
                         }
                      Console.ReadKey();
-                     Console.Clear();
+                     //Console.Clear();
                   }
             }
            else
@@ -94,7 +96,7 @@ namespace Monopoly
                           Console.WriteLine("Aucun hotel ne sera ajouté");
                         }
                      Console.ReadKey();
-                     Console.Clear();
+                     //Console.Clear();
                 }
            }                   
         }
