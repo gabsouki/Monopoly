@@ -36,36 +36,42 @@ namespace Monopoly
            if(joueur.Argent >= prix)
            {
              Console.WriteLine("Voulez-vous acheter "+nom+" pour "+prix+"$?\n O/N");
-             if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
+             string input = Console.ReadLine();
+             if(input.Equals("O") || input.Equals("o"))
               { 
                 Transaction(joueur, prix);
                 proprietaire = joueur;
                 Console.WriteLine("Félicitation, vous êtes le nouveau propriétaire de "+nom+"! Il vous reste "+joueur.Argent+"$.");
-
+                Console.WriteLine("Appuyer sur une touche pour continuer.");
+                Console.ReadKey();
               }
-            else
-                {
+            
+              else
+              {
                   Console.WriteLine(nom + "est mis au Enchère!");
-                }
+              }
              Console.ReadKey();
-             Console.Clear();
            }
         }
         public void Hypothequer(Joueur joueur)
         {
            if(proprietaire.Equals(joueur.Identifiant))
-                Console.WriteLine("Voulez-vous hypothèquer "+nom+" pour "+ prix/2 +"$?\n O/N");
-             if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
+           {
+             Console.WriteLine("Voulez-vous hypothèquer "+nom+" pour "+ prix/2 +"$?\n O/N");
+             string input = Console.ReadLine();
+             if(input.Equals("O")||input.Equals("o"))
               { 
                 Transaction(null, prix/2, joueur);
                 estHypotheque = true;
                 Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+ joueur.Argent+"$.");
               }
             else
+            {
                 Console.WriteLine(nom+ "n'a pas été hypothèquer.");
+            }
             Console.ReadKey();
             Console.Clear();
-
+            }
         }
 
         public virtual void Payer(Joueur a)

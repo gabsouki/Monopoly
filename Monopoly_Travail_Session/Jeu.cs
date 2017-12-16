@@ -20,7 +20,7 @@ namespace Monopoly
             bool game = true;
             do
             {
-                for (int i = 0; i <= nombreJoueurs; i++)
+                for (int i = 0; i <= nombreJoueurs-1; i++)
                 {
                     Joueur joueurActuel = joueur.Liste(i);
                     if(joueurActuel.Faillite == true)
@@ -29,7 +29,8 @@ namespace Monopoly
                     }
                     else if (joueurActuel.Prison == true)
                     {
-                        Console.WriteLine("{0}, vous etes en prison, vous passez votre tour.", joueurActuel.Nom);
+                        Console.WriteLine("{0}, vous etes en prison.", joueurActuel.Nom);
+                        //Prison.Action(joueurActuel); STATIQUE????
                         joueurActuel.Prison = false;
                     }
                     else
@@ -37,6 +38,7 @@ namespace Monopoly
                         Console.WriteLine("Au tour de {0} de brasser les des.\n", joueurActuel.Nom);
                         Console.WriteLine("Appuyer sur une touche pour brasser les des.");
                         Console.ReadKey();
+
                         int deUn = Dice.Brasser();
                         int deDeux = Dice.Brasser();
 
@@ -61,14 +63,15 @@ namespace Monopoly
                             doubles = 0;
                         }
                         Console.ReadKey();
-                        if(joueurActuel.Position+deUn+deDeux>=39)
+                        if(joueurActuel.Position+deUn+deDeux>=21)
                         {
-                            int compteFin = 39 - joueurActuel.Position;
-                            joueurActuel.Position = (deUn + deDeux) - compteFin;
+                            int actuel = joueurActuel.Position;
+                            joueurActuel.Position = (deUn + deDeux + actuel) - 21;
+                            Console.ReadKey();
                         }
                         else
                         {
-                            joueurActuel.Position = deUn + deDeux;
+                            joueurActuel.Position = deUn + deDeux + joueurActuel.Position;
                         }
                         Planche.Interaction(joueurActuel);
                     }

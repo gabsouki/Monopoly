@@ -7,23 +7,28 @@ namespace Monopoly
 {
     public class Prison : Case
     {
+        
         public Prison(string nom) : base(nom)
         {
-            throw new System.NotImplementedException();
+            
         }
 
-        public void Sortir()
+        public void Sortir(Joueur joueur)
         {
-            throw new System.NotImplementedException();
+            Transaction(joueur,50);
+            joueur.Prison = false;
+            joueur.Position = 30;
         }
 
-        public void Entrer()
-        {
-            throw new System.NotImplementedException();
-        }
         public override void Action(Joueur joueur)
         {
-            throw new System.NotImplementedException();
+             Console.WriteLine("Voulez-vous payer pour sortir de prison?");
+             string input = Console.ReadLine();
+             if(input.Equals("O") || input.Equals("o"))
+                {
+                Sortir(joueur);
+                }            
         }
     }
 }
+

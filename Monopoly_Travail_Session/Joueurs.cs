@@ -28,7 +28,7 @@ namespace Monopoly
             Console.WriteLine("{0} Joueurs ont étés ajoutés.", nombre);
             Console.WriteLine("Appuyez sur une touche pour commencer la partie.");
             Console.ReadKey();
-            return nombre-1;
+            return nombre;
         }
         public Joueur Liste(int identifiant)
         {

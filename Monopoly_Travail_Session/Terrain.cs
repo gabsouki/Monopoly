@@ -16,6 +16,7 @@ namespace Monopoly
         {
             nbrMaison = 0;
             proprietaire = null;
+            this.prix = prix;
             this.prixMaison = prixMaison;
         }
         public override void Action(Joueur a)
@@ -26,28 +27,30 @@ namespace Monopoly
         //Méthode
         public override void Payer(Joueur a)
         {
-            if(proprietaire.Equals(a.Identifiant))
-                Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
-            else
-            {
-                if(proprietaire.Equals(null))
+                if(proprietaire == null)
                 {
                 Acheter(a);
                 }
                 else
                 {
-                    Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
-                    if(a.Argent<loyer[nbrMaison])
-                    {
-                        do
+                    if(proprietaire.Equals(a))
                         {
-                            foreach(Case el in Planche.monopoly)
+                        Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
+                        }
+                    else
+                        {
+                        Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
+                        if(a.Argent<loyer[nbrMaison])
+                        {
+                            do
                             {
-                              if(proprietaire.Equals(a))
-                                Hypothequer(a);
-                            }
-                        }while(a.Argent<loyer[nbrMaison]);
-                    }
+                                foreach(Case el in Planche.monopoly)
+                                {
+                                if(proprietaire.Equals(a))
+                                    Hypothequer(a);
+                                }
+                            }while(a.Argent<loyer[nbrMaison]);
+                        }
 
                     Transaction(a, loyer[a.NbrGare], proprietaire);
                     Console.WriteLine("Vous avez payé " + proprietaire.Nom + "! Vous avez maintenant " + a.Argent + "$");

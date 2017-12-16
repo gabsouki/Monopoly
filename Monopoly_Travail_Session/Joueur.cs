@@ -93,7 +93,7 @@ namespace Monopoly
             }
             set
             {
-                    position = position + value;
+                position = value;
             }
         }
         public string Nom

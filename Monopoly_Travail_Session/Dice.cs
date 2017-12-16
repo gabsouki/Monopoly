@@ -13,6 +13,7 @@ namespace Monopoly
             System.Threading.Thread.Sleep(250);
             Random lance = new Random();
             int de = lance.Next(1, 7);
+            System.Threading.Thread.Sleep(250);
             return de;
         }
      }
