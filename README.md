@@ -3,10 +3,12 @@ INF-111 Travail Session
 
 TODO
 
-- [ ] Mettre logique pour double dés dans Dice?
-- [ ] Transférer Achetable dans Gare
-- [ ] Utiliser Transaction() pour gérer l'argent dans les autres classes
-- [ ] Adapter la logique d'achat des maisons à Terrain et Transaction() dans ActionSuivante()
-- [ ] Monter les classes pour les Cartes, autres cases (prison, go, visite), gare, acqueduc...
-- [ ] Monter l'initialisation de la planche (via Google Sheets)
+- [ ] Logique prison dans Jeu (Ligne 33) (MARTIN)
+- [ ] Ajouter les cartes dans Cartes et leur actions dans le switch de chest ou chance (MARTIN)
+- [ ] Ajouter Cartes.Initialiser() à Jeu (MARTIN)
+- [ ] Faire les actions pour la Taxe et l'impot
+- [ ] Message stationnement
+- [ ] Vérifier/tester la logique pour Service (MARTIN)
+- [ ] Ajouter les cases sur la planche (MARTIN)
+- [ ] ATTENTION JEU LIGNE 66-69 VALEUR DES CASES CHANGÉE À 21 À LA PLACE DE 39 (40-1)
 
