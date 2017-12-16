@@ -3,56 +3,49 @@
   <Class Name="Monopoly.Case">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACEAAAAAgAAAAAAAAACIAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AACAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Case.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Monopoly.Gare">
     <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACEAAAAAAAAIAAAAAAAIAAAAAAQAAAAAAAAE=</HashCode>
+      <HashCode>AAAAEQAACEAAAAAAAAAAAAAAAAKAAAAAAAAAAAEAAAQ=</HashCode>
       <FileName>Gare.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Monopoly.Carte">
     <Position X="5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Carte.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Monopoly.Prison">
     <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Prison.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Monopoly.AllerPrison">
     <Position X="9.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>AllerPrison.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Monopoly.Terrain">
     <Position X="0.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAACEAAAAAAAAAAAAAAAAIAAAAAgAAAAAABAAA=</HashCode>
+      <HashCode>AAIAAAAAAEAEAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Terrain.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Monopoly.Joueur">
-    <Position X="13.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Monopoly.Service">
     <Position X="2.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Service.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,15 +59,22 @@
   <Class Name="Monopoly.Planche">
     <Position X="12" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAI=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAI=</HashCode>
       <FileName>Planche.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Monopoly.Jeu">
     <Position X="10" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAACEAAAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Jeu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopoly.Joueur">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAQAAAiAAAAIAAAAGAAAABABEAAAARAAAI=</HashCode>
+      <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

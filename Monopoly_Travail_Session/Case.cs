@@ -9,14 +9,13 @@ namespace Monopoly
     {
         //Attributs
         protected string nom;
-        protected bool hypothequer;
-        protected int position;
+        //protected bool hypothequer;
+        //protected int position;
 
         //Constructeur
-        public Case(string nom, int position)
+        public Case(string nom)
         {
             this.nom = nom;
-            this.position = position;
         }
 
         //Méthodes
@@ -36,7 +35,7 @@ namespace Monopoly
         }
         public void Transaction(int montant, Joueur receveur)
         {
-            receveur.Argent = receveur.Argent + motnant;
+            receveur.Argent = receveur.Argent + montant;
         }
     }
 }

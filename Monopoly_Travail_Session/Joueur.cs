@@ -23,7 +23,7 @@ namespace Monopoly
             position = 0;
             this.nom = nom;
             argent = 1500;
-            this.faillite = faillite;
+            faillite = false;
             nbrGare = 0;
         }
 
@@ -61,7 +61,7 @@ namespace Monopoly
             set
             {
                 nbrGare = value;
-}           }
+            }
         }
         public bool Prison
         {

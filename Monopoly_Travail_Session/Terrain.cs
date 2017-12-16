@@ -12,14 +12,15 @@ namespace Monopoly
         protected int prixMaison;
 
         //Constructeur
-        public Terrain(string nom, int prix, Joueur proprietaire, int[] loyer, int hypotheque, int prixMaison) : base(nom, prix, proprietaire, loyer, hypotheque)
+        public Terrain(string nom, int prix, int[] loyer, int prixMaison) : base(nom, prix, loyer)
         {
             nbrMaison = 0;
+            proprietaire = null;
             this.prixMaison = prixMaison;
         }
         public override void Action(Joueur a)
         {
-        payer(a);
+            Payer(a);
         }
 
         //Méthode
@@ -29,39 +30,33 @@ namespace Monopoly
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
-                if(propritaire.Equals(null))
+                if(proprietaire.Equals(null))
                 {
                 Acheter(a);
                 }
                 else
                 {
                     Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
-                    if(a.Argent<location)
+                    if(a.Argent<loyer[nbrMaison])
                     {
                         do
                         {
-                            foreach(Case el in monopoly)
+                            foreach(Case el in Planche.monopoly)
                             {
-                              if(el.proprietaire.Equals(a.Identifiant))
+                              if(proprietaire.Equals(a))
                                 Hypothequer(a);
                             }
                         }while(a.Argent<loyer[nbrMaison]);
                     }
-                    foreach (Joueurs joueur in joueurs)
-                    if(propriétaire.Equals(joueur.Identifiant))
-                            {
-                              Transaction(a, loyer[nbrMaison], joueur);
-                              Console.WriteLine("Vous avez payé "+joueur.Identifiant+"! Vous avez maintenant "+a.Argent+"$ et il a "+joueur.Argent+"$.");
-                            }
-                }
-                
 
-                
+                    Transaction(a, loyer[a.NbrGare], proprietaire);
+                    Console.WriteLine("Vous avez payé " + proprietaire.Nom + "! Vous avez maintenant " + a.Argent + "$");
+                }
             }
         }
         public void addMaison(Joueur a)
         {
-            if(nbrMaison<4 && hotel = false)
+            if(nbrMaison < 4)
             {
                   if(a.Argent >= prixMaison)
                   {
@@ -82,14 +77,14 @@ namespace Monopoly
             }
            else
            {
-                if(a.Argent>=prixMaison&&hotel=false)
+                if(nbrMaison == 4)
                 {
                     Console.WriteLine("Voulez-vous ajouter un hotel sur "+nom+" pour "+prixMaison+"$?\n O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
                         Transaction(a, prixMaison);
-                         hotel = true;
-                         Console.WriteLine("Vous avez ajouter un hotel sur "+nom+"! Le terrain a maintenant un hotel! Il vous reste "+a.Argent+"$.");
+                        nbrMaison++;
+                        Console.WriteLine("Vous avez ajouter un hotel sur "+nom+"! Le terrain a maintenant un hotel! Il vous reste "+a.Argent+"$.");
                         }
                         else
                         {

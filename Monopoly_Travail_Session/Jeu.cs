@@ -10,12 +10,12 @@ namespace Monopoly
         public Jeu()
         {
             Joueurs joueur = new Joueurs();
-            Planche cases = new Planche();
+            //Planche cases = new Planche();
             Dice des = new Dice();
 
             Console.WriteLine("MONOPOLY");
             int nombreJoueurs = joueur.Ajouter();
-            cases.Initialiser();
+            Planche.Initialiser();
             int doubles = 0;
             bool game = true;
             do
@@ -70,7 +70,7 @@ namespace Monopoly
                         {
                             joueurActuel.Position = deUn + deDeux;
                         }
-                        cases.Interaction(joueurActuel);
+                        Planche.Interaction(joueurActuel);
                     }
                 }
                 if (joueur.Faillites == nombreJoueurs-1)
