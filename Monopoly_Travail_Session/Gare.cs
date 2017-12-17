@@ -49,6 +49,7 @@ namespace Monopoly
               else
               {
                   Console.WriteLine(nom + "est mis au Enchère!");
+                    Enchere();
               }
              Console.ReadKey();
            }
