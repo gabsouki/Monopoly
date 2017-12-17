@@ -45,12 +45,7 @@
     <Compile Include="Case.cs" />
     <Compile Include="AllerPrison.cs" />
     <Compile Include="Joueurs.cs" />
-    <Compile Include="Cartes.cs" />
-    <Compile Include="Taxe.cs" />
-    <Compile Include="Impot.cs" />
-    <Compile Include="Chance.cs" />
-    <Compile Include="Chest.cs" />
-    <Compile Include="Stationnement.cs" />
+   
   </ItemGroup>
   <ItemGroup>
     <None Include="DiagrammeClasses.cd" />

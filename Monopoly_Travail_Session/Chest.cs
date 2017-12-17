@@ -18,6 +18,17 @@ namespace Monopoly
                 case 1:
                     //Action
                     break;
+                case 2:
+                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
+                    joueur.Position = 0;
+                    Transaction(200, joueur);
+                    break;
+                case 3:
+                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
+                    joueur.Position = 0;
+                    Transaction(200, joueur);
+                    break;
+                //Autres cartes "Caisse commune"  
             }
         }
     }

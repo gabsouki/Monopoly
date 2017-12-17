@@ -8,7 +8,7 @@ namespace Monopoly
         }
         public override void Action(Joueur joueur)
         {
-            Console.WriteLine("Félicitations pour votre parking.");
+            Console.WriteLine("Félicitations pour votre stationnement gratuit.");
         }
     }
 }

@@ -33,8 +33,8 @@ namespace Monopoly
                 else
                 {
                     Console.WriteLine("Brassez les dés pour connaître le loyer à payer");
-                    int deUn = des.Brasser();
-                    int deDeux = des.Brasser();
+                    int deUn = Dice.Brasser();
+                    int deDeux = Dice.Brasser();
                     Console.WriteLine("Vous avez obtenu {0} et {1}", deUn, deDeux);
                     int loyerService = (deUn + deDeux) * 10;
                     Console.WriteLine("Vous devez payer "+loyerService+" à "+proprietaire+"!");

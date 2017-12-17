@@ -10,7 +10,6 @@ namespace Monopoly
         
         public Prison(string nom) : base(nom)
         {
-<<<<<<< Updated upstream
             
         }
 
@@ -21,13 +20,16 @@ namespace Monopoly
             joueur.Position = 30;
         }
 
-=======
-            //throw new System.NotImplementedException();
-        }
->>>>>>> Stashed changes
+        public void Entrer (Joueur joueur)
+            {
+            joueur.Prison = false;
+            joueur.Position = 30;
+            }
+
+
         public override void Action(Joueur joueur)
         {
-             Console.WriteLine("Voulez-vous payer pour sortir de prison?");
+             Console.WriteLine("Voulez-vous payer pour sortir de prison? O/N");
              string input = Console.ReadLine();
              if(input.Equals("O") || input.Equals("o"))
                 {

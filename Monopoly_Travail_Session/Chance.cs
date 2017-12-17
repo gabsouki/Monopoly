@@ -13,11 +13,25 @@ namespace Monopoly
             switch (random)
             {
                 case 0:
-                    //ACTION
+                    Console.WriteLine("Allez en prison ne passer pas par GO et ne recevez pas 200$.");
+                    Prison.Entrer(joueur);
                     break;
                 case 1:
-                    //Action
+                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
+                    joueur.Position = 0;
+                    Transaction(200, joueur);
                     break;
+                case 2:
+                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
+                    joueur.Position = 0;
+                    Transaction(200, joueur);
+                    break;
+                case 3:
+                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
+                    joueur.Position = 0;
+                    Transaction(200, joueur);
+                    break;
+                // Autres Cartes
             }
         }
     }

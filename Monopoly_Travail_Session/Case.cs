@@ -33,7 +33,7 @@ namespace Monopoly
             Transaction(payeur, montant);
             Transaction(montant, receveur);
         }
-         public void Transaction(Joueur payeur, int montant)
+         public static void Transaction(Joueur payeur, int montant)
         {
             payeur.Argent = payeur.Argent - montant;
         }
