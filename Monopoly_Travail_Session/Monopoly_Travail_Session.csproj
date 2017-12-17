@@ -51,6 +51,7 @@
     <Compile Include="Chance.cs" />
     <Compile Include="Chest.cs" />
     <Compile Include="Stationnement.cs" />
+    <Compile Include="Go.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DiagrammeClasses.cd" />
