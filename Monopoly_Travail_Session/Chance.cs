@@ -27,11 +27,15 @@ namespace Monopoly
                     Transaction(200, joueur);
                     break;
                 case 3:
-                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
-                    joueur.Position = 0;
-                    Transaction(200, joueur);
+                    Console.WriteLine("Payer la taxe des pauvres de 15$");
+                    Transaction(joueur, 15);
                     break;
-                // Autres Cartes
+                case 4:
+                    Console.WriteLine("Votre edifice et votre prêt prennent de la valeur, réclamez 150$");
+                    joueur.Position = 0;
+                    Transaction(joueur, 150);
+                    break;
+                    // Autres Cartes
             }
         }
     }

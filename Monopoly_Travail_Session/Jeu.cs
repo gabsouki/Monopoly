@@ -73,6 +73,7 @@ namespace Monopoly
                         {
                             int actuel = joueurActuel.Position;
                             joueurActuel.Position = (deUn + deDeux + actuel) - 29;
+                            Case.Transaction(200, joueurActuel);
                             Console.ReadKey();
                         }
                         else

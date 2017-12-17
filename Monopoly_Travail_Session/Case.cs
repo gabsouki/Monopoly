@@ -28,7 +28,7 @@ namespace Monopoly
         {
             Console.WriteLine("Vous avez atteri sur la case {0}!", nom);
         }
-        public void Transaction(Joueur payeur, int montant, Joueur receveur)
+        public static void Transaction(Joueur payeur, int montant, Joueur receveur)
         {
             Transaction(payeur, montant);
             Transaction(montant, receveur);
@@ -37,7 +37,7 @@ namespace Monopoly
         {
             payeur.Argent = payeur.Argent - montant;
         }
-        public void Transaction(int montant, Joueur receveur)
+        public static void Transaction(int montant, Joueur receveur)
         {
             receveur.Argent = receveur.Argent + montant;
         }

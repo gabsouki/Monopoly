@@ -13,22 +13,27 @@ namespace Monopoly
             switch (random)
             {
                 case 0:
-                    //ACTION
+                    Console.WriteLine("Payer la taxe scolaire de 150$");
+                    Transaction(joueur, 150);
                     break;
                 case 1:
-                    //Action
+                    Console.WriteLine("L'assurance-vie s'accumule, réclamez 100$");
+                    Transaction(100, joueur);
                     break;
                 case 2:
-                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
-                    joueur.Position = 0;
-                    Transaction(200, joueur);
+                    Console.WriteLine("Vous avez gagné le second prix à un concours de beauté, réclamez 10$");
+                    Transaction(10, joueur);
                     break;
                 case 3:
-                    Console.WriteLine("Avancer à la case GO et réclamer 200$.");
-                    joueur.Position = 0;
-                    Transaction(200, joueur);
+                    Console.WriteLine("Recevez 25$ pour vos service");
+                    Transaction(25, joueur);
                     break;
-                //Autres cartes "Caisse commune"  
+                case 4:
+                    Console.WriteLine("Payer 100$ à l'hopital");
+                    Transaction(joueur, 100);
+                    break;
+               
+                    //Autres cartes "Caisse commune"  
             }
         }
     }
