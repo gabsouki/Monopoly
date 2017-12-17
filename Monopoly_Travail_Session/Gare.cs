@@ -53,17 +53,17 @@ namespace Monopoly
              Console.ReadKey();
            }
         }
-        public void Hypothequer(Joueur joueur)
+        public void Hypothequer(Joueur a)
         {
-           if(proprietaire.Equals(joueur.Identifiant))
+           if(proprietaire.Equals(a))
            {
              Console.WriteLine("Voulez-vous hypothèquer "+nom+" pour "+ prix/2 +"$?\n O/N");
              string input = Console.ReadLine();
              if(input.Equals("O")||input.Equals("o"))
               { 
-                Transaction(null, prix/2, joueur);
+                Transaction(null, prix/2, a);
                 estHypotheque = true;
-                Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+ joueur.Argent+"$.");
+                Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+ a.Argent+"$.");
               }
             else
             {
