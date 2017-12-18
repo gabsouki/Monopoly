@@ -76,12 +76,7 @@ namespace Monopoly
 
         public virtual void Payer(Joueur a)
         {
-<<<<<<< HEAD
-
             if(proprietaire == a)
-=======
-            if(proprietaire.Equals(a))
->>>>>>> d9db42374ba256a3d3a20dec978510d7908a3cea
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
