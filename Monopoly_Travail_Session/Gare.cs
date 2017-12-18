@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,17 +53,17 @@ namespace Monopoly
              //Console.ReadKey();
            }
         }
-        public void Hypothequer(Joueur joueur)
+        public void Hypothequer(Joueur a)
         {
-           if(proprietaire.Equals(joueur.Identifiant))
+           if(proprietaire.Equals(a))
            {
              Console.WriteLine("Voulez-vous hypothèquer "+nom+" pour "+ prix/2 +"$?\n O/N");
              string input = Console.ReadLine();
              if(input.Equals("O")||input.Equals("o"))
               { 
-                Transaction(null, prix/2, joueur);
+                Transaction(null, prix/2, a);
                 estHypotheque = true;
-                Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+ joueur.Argent+"$.");
+                Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+ a.Argent+"$.");
               }
             else
             {
@@ -76,8 +76,12 @@ namespace Monopoly
 
         public virtual void Payer(Joueur a)
         {
+<<<<<<< HEAD
 
             if(proprietaire == a)
+=======
+            if(proprietaire.Equals(a))
+>>>>>>> d9db42374ba256a3d3a20dec978510d7908a3cea
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {

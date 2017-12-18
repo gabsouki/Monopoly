@@ -22,11 +22,11 @@ namespace Monopoly
 
         public override void Payer(Joueur joueur)
         {
-            if(proprietaire == joueur)
+            if(proprietaire.Equals(joueur))
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
-                if(proprietaire == null)
+                if(proprietaire.Equals(null))
                     {
                         Acheter(joueur);
                     }
@@ -37,7 +37,7 @@ namespace Monopoly
                     int deDeux = Dice.Brasser();
                     Console.WriteLine("Vous avez obtenu {0} et {1}", deUn, deDeux);
                     int loyerService = (deUn + deDeux) * 10;
-                    Console.WriteLine("Vous devez payer "+loyerService+" à "+proprietaire+"!");
+                    Console.WriteLine("Vous devez payer "+loyerService+" à "+proprietaire.Nom+"!");
                     if(joueur.Argent>loyerService)
                         joueur.Argent = joueur.Argent - loyerService;
                     else
@@ -46,7 +46,7 @@ namespace Monopoly
                             {
                             foreach (Case el in Planche.monopoly)
                                 {
-                                  if(proprietaire == joueur)
+                                  if(proprietaire.Equals(joueur))
                                   Hypothequer(joueur);
                                 }
                         }while(joueur.Argent<loyerService);
