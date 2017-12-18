@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -43,15 +43,13 @@
     <Compile Include="Jeu.cs" />
     <Compile Include="Planche.cs" />
     <Compile Include="Prison.cs" />
-    <Compile Include="Stationnement.cs" />
     <Compile Include="Terrain.cs" />
     <Compile Include="Cartes.cs" />
     <Compile Include="Dice.cs" />
-    <Compile Include="Impot.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="Joueurs.cs" />
-    <Compile Include="Taxe.cs" />
     <Compile Include="Go.cs" />
+    <Compile Include="Autre.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,12 +5,10 @@ using System.Text;
 
 namespace Monopoly
 {
-    public class Case
+    public abstract class Case
     {
         //Attributs
         protected string nom;
-        //protected bool hypothequer;
-        //protected int position;
 
         //Constructeur
         public Case(string nom)
@@ -19,11 +17,7 @@ namespace Monopoly
         }
 
         //Méthodes
-        public virtual void Action(Joueur joueur)
-        {
-            
-        }
-
+        public abstract void Action(Joueur joueur);
         public void Afficher()
         {
             Console.WriteLine("Vous avez atteri sur la case {0}!", nom);

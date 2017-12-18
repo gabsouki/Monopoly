@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Monopoly
 {
-    public class Go
+    public class Go : Case
     {
-        public Go()
+        public Go(string nom) : base(nom)
         {
             
         }
 
-        public void Action(Joueur joueur)
+        public override void Action(Joueur joueur)
         {
              Console.WriteLine("Vous réclamez 200$ à la banque.");           
         }
