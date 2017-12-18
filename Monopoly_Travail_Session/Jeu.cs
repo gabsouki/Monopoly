@@ -30,8 +30,14 @@ namespace Monopoly
                     else if (joueurActuel.Prison == true)
                     {
                         Console.WriteLine("{0}, vous etes en prison.", joueurActuel.Nom);
-                        //Prison.Action(joueurActuel); STATIQUE????
-                        joueurActuel.Prison = false;
+                        Console.WriteLine("Voulez-vous payer pour sortir de prison? O/N");
+                        string input = Console.ReadLine();
+                        if(input.Equals("O") || input.Equals("o"))
+                        {
+                                Case.Transaction(joueurActuel,50);
+                                joueurActuel.Prison = false;
+                                joueurActuel.Position = 30;
+                        }
                     }
                     else
                     {
@@ -62,12 +68,12 @@ namespace Monopoly
                         {
                             doubles = 0;
                         }
-                        Console.ReadKey();
-                        if(joueurActuel.Position+deUn+deDeux>=21)
+                        //Console.ReadKey();
+                        if(joueurActuel.Position+deUn+deDeux>=29)
                         {
                             int actuel = joueurActuel.Position;
-                            joueurActuel.Position = (deUn + deDeux + actuel) - 21;
-                            Console.ReadKey();
+                            joueurActuel.Position = (deUn + deDeux + actuel) - 29;
+                            //Console.ReadKey();
                         }
                         else
                         {

@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{9E22D4AD-3C56-4DF8-93FB-6150C4EC47BF}</ProjectGuid>
+    <ProjectGuid>{67AAE3CA-6094-4F91-9A02-910511DC2A17}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Monopoly_Travail_Session</RootNamespace>
     <AssemblyName>Monopoly_Travail_Session</AssemblyName>
@@ -34,26 +34,24 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Jeu.cs" />
-    <Compile Include="Joueur.cs" />
-    <Compile Include="Dice.cs" />
     <Compile Include="Gare.cs" />
-    <Compile Include="Planche.cs" />
-    <Compile Include="Terrain.cs" />
-    <Compile Include="Prison.cs" />
     <Compile Include="Service.cs" />
-    <Compile Include="Case.cs" />
     <Compile Include="AllerPrison.cs" />
-    <Compile Include="Joueurs.cs" />
-    <Compile Include="Cartes.cs" />
-    <Compile Include="Taxe.cs" />
-    <Compile Include="Impot.cs" />
+    <Compile Include="Case.cs" />
     <Compile Include="Chance.cs" />
     <Compile Include="Chest.cs" />
+    <Compile Include="Jeu.cs" />
+    <Compile Include="Planche.cs" />
+    <Compile Include="Prison.cs" />
     <Compile Include="Stationnement.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DiagrammeClasses.cd" />
+    <Compile Include="Terrain.cs" />
+    <Compile Include="Cartes.cs" />
+    <Compile Include="Dice.cs" />
+    <Compile Include="Impot.cs" />
+    <Compile Include="Joueur.cs" />
+    <Compile Include="Joueurs.cs" />
+    <Compile Include="Taxe.cs" />
+    <Compile Include="Go.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

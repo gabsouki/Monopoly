@@ -11,13 +11,16 @@ namespace Monopoly
         {
 
         }
-        public void Entrer()
+        public void Entrer(Joueur joueur)
         {
-            throw new System.NotImplementedException();
+
         }
+
         public override void Action(Joueur joueur)
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Vous êtes maintenant en prison.");
+            joueur.Prison = false;
+            joueur.Position = 30; 
         }
     }
 }

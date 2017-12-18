@@ -41,7 +41,7 @@ namespace Monopoly
                         }
                     else
                         {
-                        Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
+                        Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire.Nom+"!");
                         if(a.Argent<loyer[nbrMaison])
                         {
                             do
