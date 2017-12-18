@@ -92,7 +92,7 @@ namespace Monopoly
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
-                if (acheter = false)
+                if (acheter == false)
                 {
                 Acheter(a);
                 acheter = true;
@@ -153,7 +153,7 @@ namespace Monopoly
 
                 }
             }
-            }while (acheter = false);
+            }while (acheter == false);
         }
     }
 }
