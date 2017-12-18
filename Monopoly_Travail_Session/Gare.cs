@@ -43,14 +43,14 @@ namespace Monopoly
                 proprietaire = joueur;
                 Console.WriteLine("Félicitation, vous êtes le nouveau propriétaire de "+nom+"! Il vous reste "+joueur.Argent+"$.");
                 Console.WriteLine("Appuyer sur une touche pour continuer.");
-                Console.ReadKey();
+                //Console.ReadKey();
               }
             
               else
               {
                   Console.WriteLine(nom + "est mis au Enchère!");
               }
-             Console.ReadKey();
+             //Console.ReadKey();
            }
         }
         public void Hypothequer(Joueur joueur)
@@ -76,11 +76,12 @@ namespace Monopoly
 
         public virtual void Payer(Joueur a)
         {
-            if(proprietaire.Equals(a.Identifiant))
+
+            if(proprietaire == a)
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
-                if(proprietaire.Equals(null))
+                if (proprietaire == null)
                 {
                 Acheter(a);
                 a.NbrGare = a.NbrGare++;
