@@ -19,7 +19,7 @@ namespace Monopoly
         public override void Action(Joueur joueur)
         {
             Console.WriteLine("Vous êtes maintenant en prison.");
-            joueur.Prison = false;
+            joueur.Prison = true;
             joueur.Position = 30; 
         }
     }

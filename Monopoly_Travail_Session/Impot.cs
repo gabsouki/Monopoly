@@ -8,8 +8,8 @@ namespace Monopoly
         }
         public override void Action(Joueur joueur)
         {
-            //ACTION PAYER IMPOTS SELON LE JOUEUR.ARGENT 10% OU MONTANT FIXE
-            Console.Write("OK");
+            Console.WriteLine("Vous êtes arrivé sur la case Impôt. Vous devez payer 200$.");
+            Transaction(joueur, 200);
         }
     }
 }

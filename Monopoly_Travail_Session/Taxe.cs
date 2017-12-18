@@ -8,8 +8,8 @@ namespace Monopoly
         }
         public override void Action(Joueur joueur)
         {
-            //ACTION PAYER UNE TAXE FIXE
-            Console.Write("OK");
+            Console.WriteLine("Vous vivez dans le grand luxe, vous devez payer une taxe de 100$");
+            Transaction(joueur, 100);
         }
     }
 }

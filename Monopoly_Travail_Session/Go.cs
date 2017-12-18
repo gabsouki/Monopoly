@@ -11,5 +11,10 @@ namespace Monopoly
         {
             
         }
+
+        public void Action(Joueur joueur)
+        {
+             Console.WriteLine("Vous réclamez 200$ à la banque.");           
+        }
 	}
 }

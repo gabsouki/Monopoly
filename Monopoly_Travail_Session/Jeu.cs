@@ -38,6 +38,11 @@ namespace Monopoly
                                 joueurActuel.Prison = false;
                                 joueurActuel.Position = 30;
                         }
+                        else
+                        {
+                                joueurActuel.Prison = true;
+                                joueurActuel.Position = 30;
+                        }
                     }
                     else
                     {

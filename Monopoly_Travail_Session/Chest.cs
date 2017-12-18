@@ -8,9 +8,9 @@ namespace Monopoly
         }
         public override void Action(Joueur joueur)
         {
-            int random = 0;
-            Console.WriteLine(Cartes.chest[random]);
-            switch (random)
+            Random random = new Random();
+            int resultat = random.Next(1, 7);
+            switch (resultat)
             {
                 case 0:
                     Console.WriteLine("Payer la taxe scolaire de 150$");

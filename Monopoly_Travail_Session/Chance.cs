@@ -8,13 +8,14 @@ namespace Monopoly
         }
         public override void Action(Joueur joueur)
         {
-            int random = 0;
-            Console.WriteLine(Cartes.chance[random]);
-            switch (random)
+            Random random = new Random();
+            int resultat = random.Next(1, 7);
+            switch (resultat)
             {
                 case 0:
                     Console.WriteLine("Allez en prison ne passer pas par GO et ne recevez pas 200$.");
-                    //Prison.Entrer(joueur);
+                    joueur.Prison = true;
+                    joueur.Position = 30;
                     break;
                 case 1:
                     Console.WriteLine("Avancer à la case GO et réclamer 200$.");
