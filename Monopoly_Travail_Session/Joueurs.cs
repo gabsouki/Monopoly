@@ -7,7 +7,7 @@ namespace Monopoly
 {
     public class Joueurs
     {
-        List<Joueur> joueurs;
+        public static List<Joueur> joueurs;
         protected int faillites;
 
         public Joueurs()

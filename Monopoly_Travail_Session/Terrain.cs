@@ -21,12 +21,12 @@ namespace Monopoly
             this.loyer = loyer;
             this.prix = prix;
         }
+
+        //Méthodes
         public override void Action(Joueur a)
         {
             Payer(a);
         }
-
-        //Méthode
         public override void Payer(Joueur a)
         {
                 if(proprietaire == null)
@@ -57,6 +57,7 @@ namespace Monopoly
                     Transaction(a, loyer[a.NbrGare], proprietaire);
                     Console.WriteLine("Vous avez payé " + proprietaire.Nom + "! Vous avez maintenant " + a.Argent + "$");
                 }
+                Console.ReadKey();
             }
         }
         public void addMaison(Joueur a)
@@ -77,7 +78,7 @@ namespace Monopoly
                           Console.WriteLine("Aucune maison ne sera ajoutée");
                         }
                      Console.ReadKey();
-                     //Console.Clear();
+                     Console.Clear();
                   }
             }
            else
@@ -96,7 +97,7 @@ namespace Monopoly
                           Console.WriteLine("Aucun hotel ne sera ajouté");
                         }
                      Console.ReadKey();
-                     //Console.Clear();
+                     Console.Clear();
                 }
            }                   
         }
