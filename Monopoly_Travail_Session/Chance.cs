@@ -14,7 +14,7 @@ namespace Monopoly
             {
                 case 0:
                     Console.WriteLine("Allez en prison ne passer pas par GO et ne recevez pas 200$.");
-                    Prison.Entrer(joueur);
+                    //Prison.Entrer(joueur);
                     break;
                 case 1:
                     Console.WriteLine("Avancer à la case GO et réclamer 200$.");

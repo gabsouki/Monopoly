@@ -5,13 +5,11 @@ using System.Text;
 
 namespace Monopoly
 {
-
-    public class Go : Case
+    public class Go
     {
-	
-        public void Go()
+        public Go()
         {
-            nom = "Go";
+            
         }
 	}
 }
