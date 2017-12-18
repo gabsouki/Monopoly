@@ -74,10 +74,10 @@ namespace Monopoly
                             doubles = 0;
                         }
                         //Console.ReadKey();
-                        if(joueurActuel.Position+deUn+deDeux>=29)
+                        if(joueurActuel.Position+deUn+deDeux>=39)
                         {
                             int actuel = joueurActuel.Position;
-                            joueurActuel.Position = (deUn + deDeux + actuel) - 29;
+                            joueurActuel.Position = (deUn + deDeux + actuel) - 39;
                             //Console.ReadKey();
                         }
                         else
