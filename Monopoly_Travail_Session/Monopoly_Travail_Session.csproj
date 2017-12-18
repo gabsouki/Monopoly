@@ -52,6 +52,7 @@
     <Compile Include="Joueurs.cs" />
     <Compile Include="Taxe.cs" />
     <Compile Include="Go.cs" />
+    <Compile Include="Autre.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

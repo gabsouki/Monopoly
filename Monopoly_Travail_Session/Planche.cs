@@ -23,11 +23,7 @@ namespace Monopoly
             monopoly.Add(new Terrain("Mediterranean Avenue", 60, new int[] { 2, 10, 30, 90, 160, 250 }, 50));
             //monopoly.Add(new Chest("Caisse commune"));
             monopoly.Add(new Terrain("Baltic Avenue", 60, new int[] { 4, 20, 60, 180, 320, 450 }, 50));
-<<<<<<< HEAD
             monopoly.Add(new Autre("impot"));
-=======
-            //monopoly.Add(new Impot("Impot sur le revenu"));
->>>>>>> a255fe1d4efd14f2bba833682c871df0f2fe76e8
             monopoly.Add(new Gare("Reading Railroad"));
             monopoly.Add(new Terrain("Oriental Avenue", 100, new int[] { 6, 30, 90, 270, 400, 550 }, 50));
             //monopoly.Add(new Chance("Chance"));
@@ -43,11 +39,7 @@ namespace Monopoly
             //monopoly.Add(new Chest("Caisse commune"));
             monopoly.Add(new Terrain("Tennessee Avenue", 180, new int[] { 14, 70, 200, 550, 750, 950 }, 100));
             monopoly.Add(new Terrain("New York Avenue", 200, new int[] { 16, 80, 220, 600, 800, 1000 }, 100));
-<<<<<<< HEAD
             monopoly.Add(new Autre("parking"));
-=======
-            //monopoly.Add(new Stationnement("Stationnement Gratuit"));
->>>>>>> a255fe1d4efd14f2bba833682c871df0f2fe76e8
             monopoly.Add(new Terrain("Kentucky Avenue", 220, new int[] { 18, 90, 250, 700, 875, 1050 }, 150));
             //monopoly.Add(new Chance("Chance"));
             monopoly.Add(new Terrain("Indiana Avenue", 220, new int[] { 18, 90, 250, 700, 875, 1050 }, 150));
@@ -65,11 +57,7 @@ namespace Monopoly
             monopoly.Add(new Gare("Short Line Railroad"));
             //monopoly.Add(new Chance("Chance"));
             monopoly.Add(new Terrain("Park Place", 350, new int[] { 35, 175, 500, 1100, 1300, 1500 }, 200));
-<<<<<<< HEAD
             monopoly.Add(new Autre("taxe"));
-=======
-            //monopoly.Add(new Taxe("Taxe de luxe"));
->>>>>>> a255fe1d4efd14f2bba833682c871df0f2fe76e8
             monopoly.Add(new Terrain("Boardwalk", 400, new int[] { 50, 200, 600, 1400, 1700, 2000 }, 200));
 
 
