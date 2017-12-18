@@ -29,9 +29,10 @@ namespace Monopoly
         }
         public override void Payer(Joueur a)
         {
-                if(proprietaire == null)
+                if(acheter = false)
                 {
                 Acheter(a);
+                acheter = true;
                 }
                 else
                 {

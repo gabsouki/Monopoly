@@ -12,6 +12,7 @@ namespace Monopoly
         protected Joueur proprietaire;
         protected bool estHypotheque;
         protected int[] loyer;
+        protected bool acheter;
        
         //Constructeur
         public Gare(string nom) : base (nom)
@@ -20,6 +21,7 @@ namespace Monopoly
             estHypotheque = false;
             proprietaire = null;
             loyer = new int[] {0, 25, 50, 100, 200};
+            acheter = false;
         }
 
         //Accesseur
@@ -71,7 +73,7 @@ namespace Monopoly
              string input = Console.ReadLine();
              if(input.Equals("O")||input.Equals("o"))
               { 
-                Transaction(null, prix/2, a);
+                Transaction(prix/2, a);
                 estHypotheque = true;
                 Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+ a.Argent+"$.");
               }
@@ -90,9 +92,10 @@ namespace Monopoly
                 Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
-                if (proprietaire == null)
+                if (acheter = false)
                 {
                 Acheter(a);
+                acheter = true;
                 a.NbrGare = a.NbrGare++;
                 }
                 else
@@ -121,7 +124,7 @@ namespace Monopoly
         public void Enchere()
         {
             Console.WriteLine("L'enchère dure 30 secondes. Le joueur ayant dit le plus gros montant après le chronomètre remporte le terrain.");
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(10000);
             Console.WriteLine("C'est parti!");
             for(int i=30; i>=0; i--)
                 {
@@ -143,13 +146,14 @@ namespace Monopoly
                             {
                             Transaction(a, monte);
                              proprietaire = a;
+                            acheter = true;
                             }
                        else
                             Console.WriteLine("Le joueur n'a pas assez d'argent pour payer. Le joueur d'avant remporte l'enchère.");
 
                 }
             }
-            }while (proprietaire.Equals(null));
+            }while (acheter = false);
         }
     }
 }
