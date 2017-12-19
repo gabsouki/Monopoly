@@ -128,6 +128,8 @@ namespace Monopoly
                         {
                             int actuel = joueurActuel.Position;
                             joueurActuel.Position = (deUn + deDeux + actuel) - 39;
+                            joueurActuel.Argent = joueurActuel.Argent + 200;
+                            Console.WriteLine("\nVous avez passé GO, vous avez réclamé 200$");
                             //Console.ReadKey();
                         }
                         else

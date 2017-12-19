@@ -95,7 +95,7 @@ namespace Monopoly
            {
                 if(nbrMaison == 4)
                 {
-                    Console.WriteLine("\nVoulez-vous ajouter un hotel sur " + nom+" pour "+prixMaison+"$?\n O/N");
+                    Console.WriteLine("\nVoulez-vous ajouter un hotel sur " + nom+" pour "+prixMaison+"$? O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
                         Transaction(a, prixMaison);
