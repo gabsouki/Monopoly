@@ -46,6 +46,7 @@ namespace Monopoly
         {
            if(joueur.Argent >= prix)
            {
+             Console.WriteLine("\nIl vous reste " + joueur.Argent + "$.");
              Console.WriteLine("\nVoulez-vous acheter " + nom+" pour "+prix+"$?\n O/N");
              string input = Console.ReadLine();
              if(input.Equals("O") || input.Equals("o"))
