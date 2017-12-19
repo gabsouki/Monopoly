@@ -20,10 +20,10 @@ namespace Monopoly
             bool game = true;
             do
             {
-                for (int i = 0; i <= nombreJoueurs-1; i++)
+                for (int i = 0; i <= nombreJoueurs - 1; i++)
                 {
                     Joueur joueurActuel = joueur.Liste(i);
-                    if(joueurActuel.Faillite == true)
+                    if (joueurActuel.Faillite == true)
                     {
                         Console.WriteLine("\n{0} est en faillite. Le tour est au joueur suivant.", joueurActuel.Nom);
                     }
@@ -35,21 +35,58 @@ namespace Monopoly
                         {
                             Console.WriteLine("\nVoulez-vous utiliser votre carte pour sortir de prison et jouer au prochain tour? O/N");
                             string input1 = Console.ReadLine();
-                            if(input1.Equals("O") || input1.Equals("o"))
+                            if (input1.Equals("O") || input1.Equals("o"))
                             {
-                                joueurActuel.NbrCartePrison --;
+                                joueurActuel.NbrCartePrison--;
                                 joueurActuel.Prison = false;
                                 joueurActuel.Position = 10;
                             }
-                            
-                            else if(input1.Equals("N") || input1.Equals("N"))
+
+                            else if (input1.Equals("N") || input1.Equals("N"))
                             {
                                 AllerPrison.Sortir(joueurActuel);
                             }
                         }
                         else
                         {
-                            AllerPrison.Sortir(joueurActuel);
+                            Console.WriteLine("\nEst-ce qu'un joueur veux vous vendre une carte chance ou caisse commune pour sortir de prison O/N");
+                            string input1 = Console.ReadLine();
+                            if (input1.Equals("O") || input1.Equals("o"))
+                            {
+                                Console.WriteLine("\nQuel est le nom du joueur qui veut vous vendre la carte vous permettant de sortir de prison ?");
+                                string nomPrison = Console.ReadLine();
+                                foreach (Joueur joueurPrison in Joueurs.joueurs)
+                                {
+                                    if (nomPrison.Equals(joueurPrison.Nom))
+                                    {
+                                        if (joueurPrison.NbrCartePrison >= 1)
+                                        {
+                                            Console.WriteLine("\nPour quel montant?");
+                                            int montantPrison = Int32.Parse(Console.ReadLine());
+                                            if (montantPrison <= joueurActuel.Argent)
+                                            {
+                                                Case.Transaction(joueurActuel, montantPrison, joueurPrison);
+                                                joueurPrison.NbrCartePrison--;
+                                                AllerPrison.Sortir(joueurActuel);
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("\nvous n'avez pas assez d'argent pour payer la carte lui permetteant de sortir de prison.");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("\nCe joueur ne possède pas de carte vous permettant de sortir de prison. Surveillez le pour le reste de la partie!");
+                                            AllerPrison.Sortir(joueurActuel);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                AllerPrison.Sortir(joueurActuel);
+                            }
+                            
                         }
                     }
                     else
@@ -87,7 +124,7 @@ namespace Monopoly
                             doubles = 0;
                         }
                         //Console.ReadKey();
-                        if(joueurActuel.Position+deUn+deDeux>=39)
+                        if (joueurActuel.Position + deUn + deDeux >= 39)
                         {
                             int actuel = joueurActuel.Position;
                             joueurActuel.Position = (deUn + deDeux + actuel) - 39;
@@ -100,8 +137,10 @@ namespace Monopoly
                         Planche.Interaction(joueurActuel);
                     }
                 }
-                if (joueur.Faillites == nombreJoueurs-1)
-                    game = false;
+                if (joueur.Faillites == nombreJoueurs - 1)
+                {
+                game = false;
+                }
             } while (game == true);
         }
     }

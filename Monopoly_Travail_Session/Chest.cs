@@ -9,7 +9,7 @@ namespace Monopoly
         public override void Action(Joueur joueur)
         {
             Random random = new Random();
-            int resultat = random.Next(0, 11);
+            int resultat = random.Next(0, 12);
             switch (resultat)
             {
                 case 0:
@@ -75,7 +75,10 @@ namespace Monopoly
                     Console.WriteLine("\nSortez de la prison sans frais, cette carte peut être gardée en cas de besoin ou pour être vendue.");
                     joueur.NbrCartePrison++;
                     break;
-                
+                case 12:
+                    Console.WriteLine("\nOuverture de l'opéra, réclamez 50$ de chaque joueur.");
+                    Transactions(50, joueur);
+                    break;
 
 
 

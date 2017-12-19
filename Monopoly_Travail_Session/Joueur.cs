@@ -25,6 +25,7 @@ namespace Monopoly
             this.nom = nom;
             argent = 1500;
             faillite = false;
+            prison = false;
             nbrCartePrison = 0;
             nbrGare = 0;
         }
