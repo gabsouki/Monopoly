@@ -35,5 +35,19 @@ namespace Monopoly
         {
             receveur.Argent = receveur.Argent + montant;
         }
+        public static void Transactions(Joueur payeur, int montant)
+        {
+            foreach(Joueur j in Joueurs.joueurs)
+                {
+                Transaction(payeur, montant, j);
+                }
+        }
+        public static void Transactions(int montant, Joueur receveur)
+        {
+            foreach(Joueur j in Joueurs.joueurs)
+                {
+                Transaction(j, montant, receveur);
+                }
+        }
     }
 }

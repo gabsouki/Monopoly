@@ -79,12 +79,12 @@ namespace Monopoly
               }
             else
             {
-<<<<<<< HEAD
+// HEAD
                 Console.WriteLine(nom+ "n'a pas été hypothèqué.");
                 faill = false;
-=======
+//
                 Console.WriteLine("\n" + nom + "n'a pas été hypothèqué.");
->>>>>>> 919f786... Mise à jour Prison, Double, Cartes, Corrections du texte.
+// 919f786... Mise à jour Prison, Double, Cartes, Corrections du texte.
             }
             Console.ReadKey();
             Console.Clear();
