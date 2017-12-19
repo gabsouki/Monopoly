@@ -65,7 +65,7 @@ namespace Monopoly
              Console.ReadKey();
            }
         }
-        public void Hypothequer(Joueur a)
+        public void Hypothequer(Joueur a, ref bool faill)
         {
            if(proprietaire.Equals(a))
            {
@@ -80,6 +80,7 @@ namespace Monopoly
             else
             {
                 Console.WriteLine(nom+ "n'a pas été hypothèqué.");
+                faill = false;
             }
             Console.ReadKey();
             Console.Clear();
@@ -105,11 +106,20 @@ namespace Monopoly
                     {
                         do
                         {
+                            bool faill = true;
                             foreach(Case el in Planche.monopoly)
                             {
                               if(proprietaire.Equals(a))
-                                Hypothequer(a);
+                                Hypothequer(a, ref faill);
                             }
+                            if(faill == true)
+                                {
+                                a.Faillite = true;
+                                }
+                            else
+                                {
+                                a.Faillite = false;
+                                 }                               
                         }while(a.Argent<loyer[a.NbrGare]);
                     }
 

@@ -21,12 +21,21 @@ namespace Monopoly
                 if (a.Argent < 200)
                 {
                     do
+                    {                   
+                    bool faill = true;
+                    foreach (Gare el in Planche.monopoly)
                     {
-                        foreach(Gare el in Planche.monopoly)
-                            {
-                              if(el.Proprietaire.Equals(a))
-                                el.Hypothequer(a);
-                            }
+                        if (el.Proprietaire.Equals(a))
+                            el.Hypothequer(a, ref faill);
+                    }
+                    if (faill == true)
+                    {
+                        a.Faillite = true;
+                    }
+                    else
+                    {
+                        a.Faillite = false;
+                    }
                     } while (a.Argent < 200);
                 }
             
@@ -39,12 +48,21 @@ namespace Monopoly
                 if (a.Argent < 100)
                 {
                     do
+                    {      
+                    bool faill = true;
+                    foreach (Gare el in Planche.monopoly)
                     {
-                        foreach(Gare el in Planche.monopoly)
-                            {
-                              if(el.Proprietaire.Equals(a))
-                                el.Hypothequer(a);
-                            }
+                        if (el.Proprietaire.Equals(a))
+                            el.Hypothequer(a, ref faill);
+                    }
+                    if (faill == true)
+                    {
+                        a.Faillite = true;
+                    }
+                    else
+                    {
+                        a.Faillite = false;
+                    }
                     } while (a.Argent < 100);
                 }
 

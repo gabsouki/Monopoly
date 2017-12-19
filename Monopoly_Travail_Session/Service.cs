@@ -44,11 +44,20 @@ namespace Monopoly
                     {
                         do
                             {
-                            foreach (Case el in Planche.monopoly)
-                                {
-                                  if(proprietaire.Equals(joueur))
-                                  Hypothequer(joueur);
-                                }
+                     bool faill = true;
+                    foreach (Case el in Planche.monopoly)
+                    {
+                        if (proprietaire.Equals(joueur))
+                            Hypothequer(joueur, ref faill);
+                    }
+                    if (faill == true)
+                    {
+                        joueur.Faillite = true;
+                    }
+                    else
+                    {
+                        joueur.Faillite = false;
+                    }
                         }while(joueur.Argent<loyerService);
                         Console.WriteLine("Vous avez maintenant assez d'argent pour payer!");
                         joueur.Argent = joueur.Argent - loyerService;
