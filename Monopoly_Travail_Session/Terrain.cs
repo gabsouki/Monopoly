@@ -38,7 +38,7 @@ namespace Monopoly
                 {
                     if(proprietaire == a)
                         {
-                        Console.WriteLine("\n"+nom+" est à vous! Vous n'avez rien à payer!");
+                        Console.WriteLine("\n"+nom+" est à vous! Vous n'avez rien à payer! Appuyez sur une touche pour continuer");
                         }
                     else
                         {
@@ -76,7 +76,7 @@ namespace Monopoly
             {
                   if(a.Argent >= prixMaison)
                   {
-                        Console.WriteLine("\nVoulez-vous ajouter une maison sur " + nom+" pour "+prixMaison+"$?\n O/N");
+                        Console.WriteLine("\nVoulez-vous ajouter une maison sur " + nom+" pour "+prixMaison+"$? O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
                         Transaction(a,prixMaison);

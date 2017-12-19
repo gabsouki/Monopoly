@@ -13,7 +13,7 @@ namespace Monopoly
         }
         public static void Sortir(Joueur joueur)
         {
-            Console.WriteLine("\nVoulez-vous payer pour sortir de prison et jouer au prochain tour? O/N");
+            Console.WriteLine("\nVoulez-vous payer 50$ pour sortir de prison et jouer au prochain tour? O/N");
             string input = Console.ReadLine();
             if (input.Equals("O") || input.Equals("o"))
             {
