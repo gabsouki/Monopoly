@@ -9,7 +9,6 @@ namespace Monopoly
     {
         //Attributs
         protected int prix;
-        protected Joueur proprietaire;
         protected bool estHypotheque;
         protected int[] loyer;
         protected bool acheter;
@@ -71,7 +70,7 @@ namespace Monopoly
              Console.ReadKey();
            
         }
-        public void Hypothequer(Joueur a, ref bool faill)
+        public override void Hypothequer(Joueur a, ref bool faill)
         {
            if(proprietaire == a)
            {
@@ -119,7 +118,7 @@ namespace Monopoly
                             bool faill = true;
                             foreach(Case el in Planche.monopoly)
                             {
-                              if(el.proprietaire==a)
+                              if(el.Proprietaire==a)
                                 el.Hypothequer(a, ref faill);
                             }
                             if(faill == true)

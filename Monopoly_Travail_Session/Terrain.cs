@@ -50,7 +50,7 @@ namespace Monopoly
                                 bool faill = true;
                                 foreach(Case el in Planche.monopoly)
                                 {
-                                if(el.proprietaire==a)
+                                if(el.Proprietaire==a)
                                     el.Hypothequer(a, ref faill);
                                 }
                                 if(faill == true)

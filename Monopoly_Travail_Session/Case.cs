@@ -9,6 +9,7 @@ namespace Monopoly
     {
         //Attributs
         protected string nom;
+        protected Joueur proprietaire;
 
         //Constructeur
         public Case(string nom)
@@ -17,6 +18,10 @@ namespace Monopoly
         }
 
         //Méthodes
+        public Joueur Proprietaire
+            {
+            get{return proprietaire;}
+            }
         public abstract void Action(Joueur joueur);
         public void Afficher()
         {
@@ -49,5 +54,8 @@ namespace Monopoly
                 Transaction(j, montant, receveur);
                 }
         }
+        public virtual void Hypothequer(Joueur a, ref bool faill)
+            {
+            }
     }
 }
