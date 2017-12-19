@@ -62,8 +62,14 @@ namespace Monopoly
                   Console.WriteLine("\n" + nom + " est mis aux Enchères!");
                     Enchere();
               }
-             Console.ReadKey();
            }
+           else
+           {    
+                    Console.WriteLine("\n Vous n'avez pas assez d'argent pour acheter cette propriété. Elle sera donc mise aux enchères.");
+                    Enchere();
+           }
+             Console.ReadKey();
+           
         }
         public void Hypothequer(Joueur a, ref bool faill)
         {
