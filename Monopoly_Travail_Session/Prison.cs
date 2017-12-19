@@ -15,7 +15,7 @@ namespace Monopoly
 
         public override void Action(Joueur joueur)
         {
-             Console.WriteLine("Vous visitez votre ami en prison pour frude immibilière!!! Ne vous retrouvez pas dans la même situation...");           
+             Console.WriteLine("Vous visitez votre ami en prison pour fraude immobilière!!! Ne vous retrouvez pas dans la même situation...");           
         }
     }
 }

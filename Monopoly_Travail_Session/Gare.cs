@@ -133,35 +133,35 @@ namespace Monopoly
         }
         public void Enchere()
         {
-            Console.WriteLine("L'enchère dure 30 secondes. Le joueur ayant dit le plus gros montant après le chronomètre remporte le terrain.");
+            Console.WriteLine("L'enchère dure 30 secondes. Le joueur ayant dit le plus gros montant après le chronomètre remporte le terrain. Attendez le début du chronomètre...");
             System.Threading.Thread.Sleep(10000);
             Console.WriteLine("C'est parti!");
             for(int i=30; i>=0; i--)
                 {
                 Console.WriteLine(i);
                 System.Threading.Thread.Sleep(1000);
-                Console.Clear();
+                //Console.Clear();
                 }
             do
             {
-            Console.WriteLine("Fin de l'enchère! \n Quel est le nom du joueur qui a remporter l'enchère?");
-            string nome = Console.ReadLine();
-           foreach(Joueur a in Joueurs.joueurs)
+            Console.WriteLine("Fin de l'enchère!\nQuel est le nom du joueur qui a remporter l'enchère?");
+            string nomEnc = Console.ReadLine();
+            foreach(Joueur joueurEnc in Joueurs.joueurs)
             {
-              if(nome.Equals(a.Nom))
-                {
+              if(nomEnc.Equals(joueurEnc.Nom))
+              {
                       Console.WriteLine("Pour quel montant?");
-                       int monte = Int32.Parse(Console.ReadLine());
-                       if(monte<a.Argent)
+                       int montantEnc = Int32.Parse(Console.ReadLine());
+                       if(montantEnc<=joueurEnc.Argent)
                             {
-                            Transaction(a, monte);
-                             proprietaire = a;
+                            Transaction(joueurEnc, montantEnc);
+                            proprietaire = joueurEnc;
                             acheter = true;
-                            }
+                            Console.WriteLine("Félicitation " + nomEnc + ",vous êtes le nouveau propriétaire de " + nom+". Appuyer sur un touche pour continuer.");
+                        }
                        else
                             Console.WriteLine("Le joueur n'a pas assez d'argent pour payer. Le joueur d'avant remporte l'enchère.");
-
-                }
+              }
             }
             }while (acheter == false);
         }
