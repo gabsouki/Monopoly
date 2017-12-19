@@ -30,7 +30,7 @@ namespace Monopoly
             }
             Console.WriteLine("\n{0} Joueurs ont étés ajoutés.", nombre);
             Random rnd = new Random();
-            int random = 2;//rnd.Next(0, joueurs.Count-1);
+            int random = rnd.Next(0, joueurs.Count-1);
             if (random != 0)
             {
                 for (int i = random; i < joueurs.Count; i++)
