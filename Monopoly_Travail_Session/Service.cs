@@ -23,7 +23,7 @@ namespace Monopoly
         public override void Payer(Joueur joueur)
         {
             if(proprietaire == joueur)
-                Console.WriteLine("\n" + nom+" est à vous! Vous n'avez rien à payer!");
+                Console.WriteLine("\n" + nom+" est à vous! Vous n'avez rien à payer! Appuyez sur une touche pour continuer.");
             else
             {
                 if(proprietaire == null)
