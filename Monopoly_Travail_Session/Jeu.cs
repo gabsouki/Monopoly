@@ -71,7 +71,7 @@ namespace Monopoly
                                             }
                                             else
                                             {
-                                                Console.WriteLine("\nvous n'avez pas assez d'argent pour payer la carte lui permetteant de sortir de prison.");
+                                                Console.WriteLine("\nVous n'avez pas assez d'argent pour lui payer la carte vous permetteant de sortir de prison.");
                                             }
                                         }
                                         else
@@ -128,8 +128,6 @@ namespace Monopoly
                         {
                             int actuel = joueurActuel.Position;
                             joueurActuel.Position = (deUn + deDeux + actuel) - 39;
-                            joueurActuel.Argent = joueurActuel.Argent + 200;
-                            Console.WriteLine("\nVous avez passé GO, vous avez réclamé 200$");
                             //Console.ReadKey();
                         }
                         else

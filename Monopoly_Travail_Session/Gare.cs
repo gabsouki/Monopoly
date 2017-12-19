@@ -65,7 +65,7 @@ namespace Monopoly
            }
            else
            {    
-                    Console.WriteLine("\n Vous n'avez pas assez d'argent pour acheter cette propriété. Elle sera donc mise aux enchères.");
+                    Console.WriteLine("\n Vous n'avez pas assez d'argent pour acheter cette propriété. Elle sera donc mise aux enchères. Appuyez sur une touche pour continuer.");
                     Enchere();
            }
              Console.ReadKey();
