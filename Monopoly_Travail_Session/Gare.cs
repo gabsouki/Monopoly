@@ -73,7 +73,7 @@ namespace Monopoly
         }
         public void Hypothequer(Joueur a, ref bool faill)
         {
-           if(proprietaire.Equals(a))
+           if(proprietaire == a)
            {
              Console.WriteLine("\nVoulez-vous hypothèquer " + nom+" pour "+ prix/2 +"$?\n O/N");
              string input = Console.ReadLine();
@@ -119,8 +119,8 @@ namespace Monopoly
                             bool faill = true;
                             foreach(Case el in Planche.monopoly)
                             {
-                              if(proprietaire.Equals(a))
-                                Hypothequer(a, ref faill);
+                              if(el.proprietaire==a)
+                                el.Hypothequer(a, ref faill);
                             }
                             if(faill == true)
                                 {

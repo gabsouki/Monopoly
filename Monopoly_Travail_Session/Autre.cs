@@ -52,7 +52,7 @@ namespace Monopoly
                     bool faill = true;
                     foreach (Gare el in Planche.monopoly)
                     {
-                        if (el.Proprietaire.Equals(a))
+                        if (el.Proprietaire==a)
                             el.Hypothequer(a, ref faill);
                     }
                     if (faill == true)
