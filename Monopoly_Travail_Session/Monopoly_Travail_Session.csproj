@@ -44,7 +44,6 @@
     <Compile Include="Planche.cs" />
     <Compile Include="Prison.cs" />
     <Compile Include="Terrain.cs" />
-    <Compile Include="Cartes.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="Joueurs.cs" />
