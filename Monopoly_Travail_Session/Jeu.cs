@@ -25,48 +25,61 @@ namespace Monopoly
                     Joueur joueurActuel = joueur.Liste(i);
                     if(joueurActuel.Faillite == true)
                     {
-                        Console.WriteLine("{0} est en faillite. Le tour est au joueur suivant.", joueurActuel.Nom);
+                        Console.WriteLine("\n{0} est en faillite. Le tour est au joueur suivant.", joueurActuel.Nom);
                     }
                     else if (joueurActuel.Prison == true)
                     {
-                        Console.WriteLine("{0}, vous etes en prison.", joueurActuel.Nom);
-                        Console.WriteLine("Voulez-vous payer pour sortir de prison? O/N");
-                        string input = Console.ReadLine();
-                        if(input.Equals("O") || input.Equals("o"))
+                        Console.WriteLine("\n---------------------------------------");
+                        Console.WriteLine("\nAu tour de {0}, mais vous êtes en prison.", joueurActuel.Nom);
+                        if (joueurActuel.NbrCartePrison >= 1)
                         {
-                                Case.Transaction(joueurActuel,50);
+                            Console.WriteLine("\nVoulez-vous utiliser votre carte pour sortir de prison et jouer au prochain tour? O/N");
+                            string input1 = Console.ReadLine();
+                            if(input1.Equals("O") || input1.Equals("o"))
+                            {
+                                joueurActuel.NbrCartePrison --;
                                 joueurActuel.Prison = false;
-                                joueurActuel.Position = 30;
+                                joueurActuel.Position = 10;
+                            }
+                            
+                            else if(input1.Equals("N") || input1.Equals("N"))
+                            {
+                                AllerPrison.Sortir(joueurActuel);
+                            }
                         }
                         else
                         {
-                                joueurActuel.Prison = true;
-                                joueurActuel.Position = 30;
+                            AllerPrison.Sortir(joueurActuel);
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Au tour de {0} de brasser les des.\n", joueurActuel.Nom);
-                        Console.WriteLine("Appuyer sur une touche pour brasser les des.");
+                        Console.WriteLine("\n---------------------------------------");
+                        Console.WriteLine("\nAu tour de {0} de brasser les dés.", joueurActuel.Nom);
+                        Console.WriteLine("\nAppuyer sur une touche pour brasser les dés.");
                         Console.ReadKey();
 
                         int deUn = Dice.Brasser();
                         int deDeux = Dice.Brasser();
 
-                        Console.WriteLine("Vous avez obtenu {0} et {1}", deUn, deDeux);
+                        Console.WriteLine("\nVous avez obtenu {0} et {1}", deUn, deDeux);
                         if (deUn == deDeux)
                         {
-                            if (doubles == 3)
+                            if (doubles == 2)
                             {
-                                Console.WriteLine("Vous avez brasse 3 doubles en ligne. Vous allez directement en prison sans passer go.");
+                                Console.WriteLine("\nVous avez brasse 3 doubles de suite. Vous allez directement en prison sans passer par GO.");
+                                System.Threading.Thread.Sleep(500);
+                                Console.WriteLine("\nVous êtes maintenant en prison.");
                                 joueurActuel.Prison = true;
-                                joueurActuel.Position = 30;
+                                joueurActuel.Position = 10;
+                                doubles = 0;
+                                continue;
                             }
                             else
                             {
                                 i--;
                                 doubles++;
-                                Console.WriteLine("Vous avez brasse un double, vous devez jouer a nouveau apres ce tour.");
+                                Console.WriteLine("\nVous avez brassé un double, vous devez jouer à nouveau après ce tour.");
                             }
                         }
                         else

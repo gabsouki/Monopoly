@@ -13,26 +13,26 @@ namespace Monopoly
         }
         public static void Sortir(Joueur joueur)
         {
-            Console.WriteLine("Voulez-vous payer pour sortir de prison et jouer au prochain tour? O/N");
+            Console.WriteLine("\nVoulez-vous payer pour sortir de prison et jouer au prochain tour? O/N");
             string input = Console.ReadLine();
             if (input.Equals("O") || input.Equals("o"))
             {
                 Case.Transaction(joueur, 50);
                 joueur.Prison = false;
-                joueur.Position = 30;
+                joueur.Position = 10;
             }
             else
             {
                 joueur.Prison = true;
-                joueur.Position = 30;
+                joueur.Position = 10;
             }
         }
 
         public override void Action(Joueur joueur)
         {
-            Console.WriteLine("Vous êtes maintenant en prison.");
+            Console.WriteLine("\nVous êtes maintenant en prison.");
             joueur.Prison = true;
-            joueur.Position = 30; 
+            joueur.Position = 10; 
         }
     }
 }

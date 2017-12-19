@@ -23,7 +23,7 @@ namespace Monopoly
         public override void Payer(Joueur joueur)
         {
             if(proprietaire == joueur)
-                Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
+                Console.WriteLine("\n" + nom+" est à vous! Vous n'avez rien à payer!");
             else
             {
                 if(proprietaire == null)
@@ -32,12 +32,12 @@ namespace Monopoly
                     }
                 else
                 {
-                    Console.WriteLine("Brassez les dés pour connaître le loyer à payer");
+                    Console.WriteLine("\nBrassez les dés pour connaître le loyer à payer");
                     int deUn = Dice.Brasser();
                     int deDeux = Dice.Brasser();
-                    Console.WriteLine("Vous avez obtenu {0} et {1}", deUn, deDeux);
+                    Console.WriteLine("\nVous avez obtenu {0} et {1}", deUn, deDeux);
                     int loyerService = (deUn + deDeux) * 10;
-                    Console.WriteLine("Vous devez payer "+loyerService+" à "+proprietaire.Nom+"!");
+                    Console.WriteLine("\nVous devez payer " + loyerService+" à "+proprietaire.Nom+"!");
                     if(joueur.Argent>loyerService)
                         joueur.Argent = joueur.Argent - loyerService;
                     else
@@ -59,7 +59,7 @@ namespace Monopoly
                         joueur.Faillite = false;
                     }
                         }while(joueur.Argent<loyerService);
-                        Console.WriteLine("Vous avez maintenant assez d'argent pour payer!");
+                        Console.WriteLine("\nVous avez maintenant assez d'argent pour payer!");
                         joueur.Argent = joueur.Argent - loyerService;
                     }
                 }

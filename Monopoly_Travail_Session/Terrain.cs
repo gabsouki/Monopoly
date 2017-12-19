@@ -36,13 +36,13 @@ namespace Monopoly
                 }
                 else
                 {
-                    if(proprietaire.Equals(a))
+                    if(proprietaire == a)
                         {
-                        Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
+                        Console.WriteLine("\n"+nom+" est à vous! Vous n'avez rien à payer!");
                         }
                     else
                         {
-                        Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire.Nom+"!");
+                        Console.WriteLine("\nVous devez payer " + prix+" à "+proprietaire.Nom+"!");
                         if(a.Argent<loyer[nbrMaison])
                         {
                             do
@@ -65,7 +65,7 @@ namespace Monopoly
                         }
 
                     Transaction(a, loyer[a.NbrGare], proprietaire);
-                    Console.WriteLine("Vous avez payé " + proprietaire.Nom + "! Vous avez maintenant " + a.Argent + "$");
+                    Console.WriteLine("\nVous avez payé " + proprietaire.Nom + "! Vous avez maintenant " + a.Argent + "$");
                 }
                 Console.ReadKey();
             }
@@ -76,16 +76,16 @@ namespace Monopoly
             {
                   if(a.Argent >= prixMaison)
                   {
-                        Console.WriteLine("Voulez-vous ajouter une maison sur "+nom+" pour "+prixMaison+"$?\n O/N");
+                        Console.WriteLine("\nVoulez-vous ajouter une maison sur " + nom+" pour "+prixMaison+"$?\n O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
                         Transaction(a,prixMaison);
                          nbrMaison ++;
-                         Console.WriteLine("Vous avez ajouter une maison sur "+nom+"! Le terrain a maintenant "+nbrMaison+" maison(s). Il vous reste "+a.Argent+"$.");
+                         Console.WriteLine("\nVous avez ajouter une maison sur " + nom+"! Le terrain a maintenant "+nbrMaison+" maison(s). Il vous reste "+a.Argent+"$.");
                         }
                         else
                         {
-                          Console.WriteLine("Aucune maison ne sera ajoutée");
+                          Console.WriteLine("\nAucune maison ne sera ajoutée");
                         }
                      Console.ReadKey();
                      Console.Clear();
@@ -95,16 +95,16 @@ namespace Monopoly
            {
                 if(nbrMaison == 4)
                 {
-                    Console.WriteLine("Voulez-vous ajouter un hotel sur "+nom+" pour "+prixMaison+"$?\n O/N");
+                    Console.WriteLine("\nVoulez-vous ajouter un hotel sur " + nom+" pour "+prixMaison+"$?\n O/N");
                         if(Console.ReadLine().Equals("O")||Console.ReadLine().Equals("o"))
                         { 
                         Transaction(a, prixMaison);
                         nbrMaison++;
-                        Console.WriteLine("Vous avez ajouter un hotel sur "+nom+"! Le terrain a maintenant un hotel! Il vous reste "+a.Argent+"$.");
+                        Console.WriteLine("\nVous avez ajouter un hotel sur " + nom+"! Le terrain a maintenant un hotel! Il vous reste "+a.Argent+"$.");
                         }
                         else
                         {
-                          Console.WriteLine("Aucun hotel ne sera ajouté");
+                          Console.WriteLine("\nAucun hotel ne sera ajouté");
                         }
                      Console.ReadKey();
                      Console.Clear();

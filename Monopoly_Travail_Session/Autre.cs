@@ -17,7 +17,7 @@ namespace Monopoly
         {
             if(nom.Equals("impot"))
             {
-                Console.WriteLine("Vous êtes sur la case Impôt sur le Revenu! Vous devez payer 200$!");
+                Console.WriteLine("\nVous êtes sur la case Impôt sur le Revenu! Vous devez payer 200$!");
                 if (a.Argent < 200)
                 {
                     do
@@ -40,11 +40,11 @@ namespace Monopoly
                 }
             
                 Transaction(a, 200);
-                Console.WriteLine("Vous avez maintenant " + a.Argent + "$");
+                Console.WriteLine("\nVous avez maintenant " + a.Argent + "$");
             }
             if(nom.Equals("taxe"))
             {
-                Console.WriteLine("Vous êtes sur la case Taxes de luxe! Vous devez payer 100$!");
+                Console.WriteLine("\nVous êtes sur la case Taxes de luxe! Vous devez payer 100$!");
                 if (a.Argent < 100)
                 {
                     do
@@ -67,11 +67,11 @@ namespace Monopoly
                 }
 
                 Transaction(a, 100);
-                Console.WriteLine("Vous avez maintenant " + a.Argent + "$");
+                Console.WriteLine("\nVous avez maintenant " + a.Argent + "$");
             }
             if(nom.Equals("parking"))
             {
-                Console.WriteLine("Vous êtes sur la case Stationnement Gratuit! Prenez une pause, vous la méritez!");
+                Console.WriteLine("\nVous êtes sur la case Stationnement Gratuit! Prenez une pause, vous la méritez!");
             }
         }
     }

@@ -14,6 +14,7 @@ namespace Monopoly
         protected int argent;
         protected bool faillite;
         protected bool prison;
+        protected int nbrCartePrison;
         int nbrGare;
 
         //Constructeurs
@@ -24,6 +25,7 @@ namespace Monopoly
             this.nom = nom;
             argent = 1500;
             faillite = false;
+            nbrCartePrison = 0;
             nbrGare = 0;
         }
 
@@ -101,6 +103,17 @@ namespace Monopoly
             get
             {
                 return nom;
+            }
+        }
+        public int NbrCartePrison
+        {
+            get
+            {
+                return nbrCartePrison;
+            }
+            set
+            {
+                nbrCartePrison = value;
             }
         }
     }

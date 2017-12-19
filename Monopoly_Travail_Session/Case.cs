@@ -20,16 +20,16 @@ namespace Monopoly
         public abstract void Action(Joueur joueur);
         public void Afficher()
         {
-            Console.WriteLine("Vous avez atteri sur la case {0}!", nom);
+            Console.WriteLine("\nVous avez atteri sur la case {0}!", nom);
         }
         public static void Transaction(Joueur payeur, int montant, Joueur receveur)
         {
-            Transaction(payeur, montant);
-            Transaction(montant, receveur);
+                Transaction(payeur, montant);
+                Transaction(montant, receveur);
         }
          public static void Transaction(Joueur payeur, int montant)
         {
-            payeur.Argent = payeur.Argent - montant;
+                payeur.Argent = payeur.Argent - montant;
         }
         public static void Transaction(int montant, Joueur receveur)
         {

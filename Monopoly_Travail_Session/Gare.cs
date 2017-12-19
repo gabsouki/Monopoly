@@ -39,27 +39,27 @@ namespace Monopoly
         if(estHypotheque == false)
              Payer(a);
         else
-             Console.WriteLine(nom + " est hypothéqué.");
+             Console.WriteLine("\n" + nom + " est hypothéqué.");
         }
 
         public void Acheter(Joueur joueur)
         {
            if(joueur.Argent >= prix)
            {
-             Console.WriteLine("Voulez-vous acheter "+nom+" pour "+prix+"$?\n O/N");
+             Console.WriteLine("\nVoulez-vous acheter " + nom+" pour "+prix+"$?\n O/N");
              string input = Console.ReadLine();
              if(input.Equals("O") || input.Equals("o"))
               { 
                 Transaction(joueur, prix);
                 proprietaire = joueur;
-                Console.WriteLine("Félicitation, vous êtes le nouveau propriétaire de "+nom+"! Il vous reste "+joueur.Argent+"$.");
-                Console.WriteLine("Appuyer sur une touche pour continuer.");
+                Console.WriteLine("\nFélicitation, vous êtes le nouveau propriétaire de " + nom+"! Il vous reste "+joueur.Argent+"$.");
+                Console.WriteLine("\nAppuyer sur une touche pour continuer.");
                 //Console.ReadKey();
               }
             
               else
               {
-                  Console.WriteLine(nom + "est mis aux Enchères!");
+                  Console.WriteLine("\n" + nom + " est mis aux Enchères!");
                     Enchere();
               }
              Console.ReadKey();
@@ -69,18 +69,22 @@ namespace Monopoly
         {
            if(proprietaire.Equals(a))
            {
-             Console.WriteLine("Voulez-vous hypothèquer "+nom+" pour "+ prix/2 +"$?\n O/N");
+             Console.WriteLine("\nVoulez-vous hypothèquer " + nom+" pour "+ prix/2 +"$?\n O/N");
              string input = Console.ReadLine();
              if(input.Equals("O")||input.Equals("o"))
               { 
                 Transaction(prix/2, a);
                 estHypotheque = true;
-                Console.WriteLine("Vous avec hypothèquer "+nom+"! Vous avez maintenant "+ a.Argent+"$.");
+                Console.WriteLine("\nVous avec hypothèquer " + nom+"! Vous avez maintenant "+ a.Argent+"$.");
               }
             else
             {
+<<<<<<< HEAD
                 Console.WriteLine(nom+ "n'a pas été hypothèqué.");
                 faill = false;
+=======
+                Console.WriteLine("\n" + nom + "n'a pas été hypothèqué.");
+>>>>>>> 919f786... Mise à jour Prison, Double, Cartes, Corrections du texte.
             }
             Console.ReadKey();
             Console.Clear();
@@ -90,7 +94,7 @@ namespace Monopoly
         public virtual void Payer(Joueur a)
         {
             if(proprietaire == a)
-                Console.WriteLine(nom+" est à vous! Vous n'avez rien à payer!");
+                Console.WriteLine("\n" + nom + " est à vous! Vous n'avez rien à payer!");
             else
             {
                 if (acheter == false)
@@ -101,7 +105,7 @@ namespace Monopoly
                 }
                 else
                 {
-                    Console.WriteLine("Vous devez payer "+prix+" à "+proprietaire+"!");
+                    Console.WriteLine("\nVous devez payer " + prix+" à "+proprietaire+"!");
                     if(a.Argent<loyer[a.NbrGare])
                     {
                         do
@@ -124,7 +128,7 @@ namespace Monopoly
                     }
 
                     Transaction(a, loyer[a.NbrGare], proprietaire);
-                    Console.WriteLine("Vous avez payé " + proprietaire.Nom + "! Vous avez maintenant " + a.Argent + "$");
+                    Console.WriteLine("\nVous avez payé " + proprietaire.Nom + "! Vous avez maintenant " + a.Argent + "$");
                     Console.ReadKey();
                 }
 
@@ -133,9 +137,9 @@ namespace Monopoly
         }
         public void Enchere()
         {
-            Console.WriteLine("L'enchère dure 30 secondes. Le joueur ayant dit le plus gros montant après le chronomètre remporte le terrain. Attendez le début du chronomètre...");
+            Console.WriteLine("\nL'enchère dure 30 secondes. Le joueur ayant dit le plus gros montant après le chronomètre remporte le terrain. Attendez le début du chronomètre...");
             System.Threading.Thread.Sleep(10000);
-            Console.WriteLine("C'est parti!");
+            Console.WriteLine("\nC'est parti!");
             for(int i=30; i>=0; i--)
                 {
                 Console.WriteLine(i);
@@ -144,25 +148,35 @@ namespace Monopoly
                 }
             do
             {
-            Console.WriteLine("Fin de l'enchère!\nQuel est le nom du joueur qui a remporter l'enchère?");
-            string nomEnc = Console.ReadLine();
-            foreach(Joueur joueurEnc in Joueurs.joueurs)
-            {
-              if(nomEnc.Equals(joueurEnc.Nom))
-              {
-                      Console.WriteLine("Pour quel montant?");
-                       int montantEnc = Int32.Parse(Console.ReadLine());
-                       if(montantEnc<=joueurEnc.Argent)
+                Console.WriteLine("\nFin de l'enchère!\r\nQuel est le nom du joueur qui a remporter l'enchère? Inscrire A pour annuler l'enchère.");
+                string nomEnc = Console.ReadLine();
+                if (nomEnc != "A" || nomEnc != "a")
+                {
+                    foreach (Joueur joueurEnc in Joueurs.joueurs)
+                    {
+                        if (nomEnc.Equals(joueurEnc.Nom))
+                        {
+                            Console.WriteLine("\nPour quel montant?");
+                            int montantEnc = Int32.Parse(Console.ReadLine());
+                            if (montantEnc <= joueurEnc.Argent)
                             {
-                            Transaction(joueurEnc, montantEnc);
-                            proprietaire = joueurEnc;
-                            acheter = true;
-                            Console.WriteLine("Félicitation " + nomEnc + ",vous êtes le nouveau propriétaire de " + nom+". Appuyer sur un touche pour continuer.");
+                                Transaction(joueurEnc, montantEnc);
+                                proprietaire = joueurEnc;
+                                acheter = true;
+                                Console.WriteLine("\nFélicitation " + nomEnc + ",vous êtes le nouveau propriétaire de " + nom + ". Appuyer sur un touche pour continuer.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nLe joueur n'a pas assez d'argent pour payer. Le joueur d'avant remporte l'enchère.");
+                            }
                         }
-                       else
-                            Console.WriteLine("Le joueur n'a pas assez d'argent pour payer. Le joueur d'avant remporte l'enchère.");
-              }
-            }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nL'enchère est annulée!");
+                    acheter = false;
+                }
             }while (acheter == false);
         }
     }
