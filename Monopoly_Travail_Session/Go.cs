@@ -14,7 +14,8 @@ namespace Monopoly
 
         public override void Action(Joueur joueur)
         {
-             Console.WriteLine("Vous réclamez 200$ à la banque.");           
+            Console.WriteLine("\nVous avez passé GO, vous avez réclamé 200$");
+            joueur.Argent = joueur.Argent + 200;
         }
 	}
 }
